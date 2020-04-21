@@ -15,9 +15,24 @@ describe('User model', () => {
 
       beforeEach(async () => {
         cody = await User.create({
-          email: 'cody@puppybook.com',
+          name: 'martin',
+          email: 'martin@puppybook.com',
           password: 'bones'
         })
+      })
+
+      it('name is not empty, and email is valid', async () => {
+        const user = User.build({name: '', email: 'asdas'})
+        try {
+          await user.validate()
+          throw Error(
+            'validation should have failed with empty name and invalid email address'
+          )
+        } catch (err) {
+          expect(err.message).to.contain('Validation notEmpty on name')
+
+          expect(err.message).to.contain('Validation isEmail on email')
+        }
       })
 
       it('returns true if the password is correct', () => {
