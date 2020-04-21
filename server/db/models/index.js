@@ -10,8 +10,6 @@ const Hobby = require('./hobby')
 
 // ASSOCIATIONS BELOW -------------
 Hobby.belongsTo(User, {as: 'instructor'})
-Hobby.belongsToMany(User, {as: 'students', through: 'enrolled_users'})
-User.belongsToMany(Hobby, {as: 'hobbies', through: 'enrolled_users'})
 // ================
 
 /**
