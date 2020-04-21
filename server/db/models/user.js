@@ -8,7 +8,8 @@ const User = db.define('user', {
   },
   imageUrl: {
     type: Sequelize.TEXT,
-    defaultValue: ''
+    defaultValue:
+      'https://getdrawings.com/free-icon/generic-profile-icon-73.png'
   },
   email: {
     type: Sequelize.STRING,
