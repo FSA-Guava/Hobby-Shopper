@@ -1,18 +1,66 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Hobby, Order} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
 
-  const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
-  ])
+  const smartCody = await User.create({
+    name: 'SmartCody',
+    email: 'cody@email.com',
+    password: '123',
+    isInstructor: true,
+    isAdmin: false
+  })
 
-  console.log(`seeded ${users.length} users`)
+  const inexperiencedCody = await User.create({
+    name: 'DumbCody',
+    email: 'murphy@email.com',
+    password: '123',
+    isInstructor: false,
+    isAdmin: false
+  })
+
+  const order = await Order.create()
+
+  const hobby = await Hobby.create({
+    name: 'Testing coding stuff',
+    description: 'Some hobbie',
+    price: 100,
+    subject: 'computers'
+  })
+
+  await hobby.setInstructor(smartCody)
+  await smartCody.addHobby(hobby)
+  await hobby.addOrder(order)
+  await order.setUser(inexperiencedCody)
+  await order.addHobby(hobby)
+
+  const users = await User.findAll({
+    include: [Hobby, 'purchases'],
+    attributes: ['id', 'name', 'email']
+  })
+
+  const hobbies = await Hobby.findAll({
+    include: ['instructor', Order]
+  })
+
+  const orderTest = await Order.findOne({
+    where: {
+      userId: 2
+    },
+    include: [Hobby]
+  })
+  await orderTest.getPrice()
+  await orderTest.checkoutOrder()
+
+  console.log(users)
+
+  console.log(orderTest)
+
+  // console.log(`seeded ${models.length} models`)
   console.log(`seeded successfully`)
 }
 

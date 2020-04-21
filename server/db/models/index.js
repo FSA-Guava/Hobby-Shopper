@@ -1,6 +1,6 @@
 const User = require('./user')
 const Hobby = require('./hobby')
-
+const Order = require('./order')
 /**
  * If we had any associations to make, this would be a great place to put them!
  * ex. if we had another model called BlogPost, we might say:
@@ -10,6 +10,11 @@ const Hobby = require('./hobby')
 
 // ASSOCIATIONS BELOW -------------
 Hobby.belongsTo(User, {as: 'instructor'})
+User.hasMany(Hobby)
+Hobby.belongsToMany(Order, {through: 'purchased_hobbies'})
+Order.hasMany(Hobby)
+Order.belongsTo(User)
+User.hasMany(Order, {as: 'purchases'})
 // ================
 
 /**
@@ -20,5 +25,6 @@ Hobby.belongsTo(User, {as: 'instructor'})
  */
 module.exports = {
   User,
-  Hobby
+  Hobby,
+  Order
 }

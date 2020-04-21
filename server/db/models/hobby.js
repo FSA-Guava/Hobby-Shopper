@@ -33,10 +33,11 @@ const Hobby = db.define('hobby', {
     allowNull: false
   },
   tags: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
+    type: Sequelize.ARRAY(Sequelize.STRING),
+    defaultValue: []
   },
   rating: {
-    type: Sequelize.ARRAY(Sequelize.INT),
+    type: Sequelize.ARRAY(Sequelize.INTEGER),
     defaultValue: [],
     get() {
       const totalRatings = this.getDataValue('rating')
