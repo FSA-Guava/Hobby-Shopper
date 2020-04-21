@@ -9,13 +9,7 @@ const Cart = db.define('cart', {
     validate: {
       min: 0
     },
-    get({ associations: true}) {
-      const hobbies = this.getHobbies()
-      return hobbies.reduce((acc, curr) => {
-        acc += curr.price
-        return acc
-      }, 0)
-    }
+
   },
   isActive: {
     type: Sequelize.BOOLEAN,
@@ -24,7 +18,13 @@ const Cart = db.define('cart', {
 
 })
 
-
+Cart.prototype.getPrice = function () {
+  const total = this.hobbies.reduce((acc, curr) => {
+    acc += curr.price
+    return acc
+  }, 0)
+  return this.update({ totalPrice: total })
+}
 
 
 module.exports = Cart
