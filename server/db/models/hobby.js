@@ -25,7 +25,7 @@ const Hobby = db.define('hobby', {
   },
   imageUrl: {
     type: Sequelize.TEXT,
-    defalutValue:
+    defaultValue:
       'https://quellochefaperte.altervista.org/wp-content/uploads/2019/05/hobby.jpg'
   },
   subject: {
@@ -47,6 +47,15 @@ const Hobby = db.define('hobby', {
       }, 0)
       // if this is true...then return the sumOfRatings divided by totalRatings length...otherwise return 0
       return totalRatings.length ? sumOfRatings / totalRatings.length : 0
+    }
+  },
+  // REVISIT...for num of seats per hobby with default & min / max potential for students
+  openSeats: {
+    type: Sequelize.INTEGER,
+    defaultValue: 20,
+    validate: {
+      min: 5,
+      max: 30
     }
   }
 })
