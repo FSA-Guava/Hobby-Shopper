@@ -9,12 +9,12 @@ const Order = require('./order')
  */
 
 // ASSOCIATIONS BELOW -------------
-Hobby.belongsTo(User, {as: 'instructor'})
-User.hasMany(Hobby)
-Hobby.belongsToMany(Order, {through: 'purchased_hobbies'})
-Order.hasMany(Hobby)
-Order.belongsTo(User)
-User.hasMany(Order, {as: 'purchases'})
+// Hobby.belongsTo(User, {as: 'instructor'})
+User.hasMany(Hobby) // user has hobbies as an instructor, not the student
+Hobby.belongsToMany(Order, {through: 'ordered_hobbies'})
+Order.belongsToMany(Hobby, {through: 'ordered_hobbies'})
+// Order.belongsTo(User)
+User.hasMany(Order) //user have many orders, so order have an userId
 // ================
 
 /**
