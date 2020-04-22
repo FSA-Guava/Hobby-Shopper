@@ -20,15 +20,16 @@ const Order = db.define('order', {
   }
 })
 
-Order.prototype.getPrice = function() {
+Order.prototype.getPrice = async function() {
   const total = this.hobbies.reduce((acc, curr) => {
     acc += curr.price
     return acc
   }, 0)
-  return this.update({totalPrice: total})
+  await this.update({totalPrice: total})
+  await this.reload()
 }
 
-Order.prototype.checkoutOrder = function() {
+Order.prototype.checkoutOrder = async function() {
   const generateCode = function() {
     return (
       '_' +
@@ -39,8 +40,8 @@ Order.prototype.checkoutOrder = function() {
   }
 
   const newCode = generateCode()
-
-  return this.update({purchaseCode: newCode, isActive: false})
+  await this.update({purchaseCode: newCode, isActive: false})
+  await this.reload()
 }
 
 module.exports = Order
