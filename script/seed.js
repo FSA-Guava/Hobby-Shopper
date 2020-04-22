@@ -32,20 +32,21 @@ async function seed() {
     subject: 'computers'
   })
 
-  await hobby.setInstructor(smartCody)
+  // await hobby.setUser(smartCody)
   await smartCody.addHobby(hobby)
-  await hobby.addOrder(order)
-  await order.setUser(inexperiencedCody)
+  // await hobby.addOrder(order)
+  // await order.setUser(inexperiencedCody)
   await order.addHobby(hobby)
+  await inexperiencedCody.addOrder(order)
 
   const users = await User.findAll({
-    include: [Hobby, 'purchases'],
+    include: [Hobby, Order],
     attributes: ['id', 'name', 'email']
   })
 
-  const hobbies = await Hobby.findAll({
-    include: ['instructor', Order]
-  })
+  // const hobbies = await Hobby.findAll({
+  //   include: ['instructor', Order]
+  // })
 
   const orderTest = await Order.findOne({
     where: {
@@ -53,12 +54,17 @@ async function seed() {
     },
     include: [Hobby]
   })
+
+  const hobbyTest = await Hobby.findAll({
+    include: [Order]
+  })
+
   await orderTest.getPrice()
   await orderTest.checkoutOrder()
 
   console.log(users)
 
-  console.log(orderTest)
+  console.log(hobbyTest)
 
   // console.log(`seeded ${models.length} models`)
   console.log(`seeded successfully`)
