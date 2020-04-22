@@ -3,6 +3,7 @@ module.exports = router
 
 // Users mounted on api/users
 router.use('/users', require('./users'))
+router.use('/orders', require('./orders'))
 
 // Hobby mounted on api/hobby
 router.use('/hobbies', require('./hobbies'))
