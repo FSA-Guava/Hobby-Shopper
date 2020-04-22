@@ -54,12 +54,17 @@ async function seed() {
     },
     include: [Hobby]
   })
+
+  const hobbyTest = await Hobby.findAll({
+    include: [Order]
+  })
+
   await orderTest.getPrice()
   await orderTest.checkoutOrder()
 
   console.log(users)
 
-  console.log(orderTest)
+  console.log(hobbyTest)
 
   // console.log(`seeded ${models.length} models`)
   console.log(`seeded successfully`)
