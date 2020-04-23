@@ -24,7 +24,7 @@ export const UserHome = props => {
         Total Price: {props.user.activeOrder.totalPrice}
       </div>
 
-      <h4>Purchases</h4>
+      <h4>Past Purchases</h4>
       <ul>
         {props.user.orders.map(order => (
           <li key={order.id}>
