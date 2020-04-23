@@ -6,3 +6,6 @@
 export {default as Navbar} from './navbar'
 export {default as UserProfile} from './user-profile'
 export {Login, Signup} from './auth-form'
+// our hobbies components here:
+export {default as AllHobbies} from './AllHobbies'
+export {default as SingleHobby} from './SingleHobby'
