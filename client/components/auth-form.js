@@ -126,7 +126,7 @@ export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
  * PROP TYPES
  */
 AuthForm.propTypes = {
-  name: PropTypes.string.isRequired,
+  method: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object
