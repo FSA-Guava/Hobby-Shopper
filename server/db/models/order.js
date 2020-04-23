@@ -21,10 +21,14 @@ const Order = db.define('order', {
 })
 
 Order.prototype.getPrice = async function() {
-  const total = this.hobbies.reduce((acc, curr) => {
-    acc += curr.price
-    return acc
-  }, 0)
+  const total = Number(
+    this.hobbies
+      .reduce((acc, curr) => {
+        acc += curr.price
+        return acc
+      }, 0)
+      .toFixed(2)
+  )
   await this.update({totalPrice: total})
   await this.reload()
 }
