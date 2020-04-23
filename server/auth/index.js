@@ -41,7 +41,7 @@ router.post('/signup', async (req, res, next) => {
     // waiting for session.order.hobbies to exist
     // const hobbies = req.session.order.hobbies
     // await order.addHobbies(hobbies)
-    await order.reload()
+    // await order.reload()
     await user.addOrder(order)
     await user.reload()
     req.login(user, err => (err ? next(err) : res.json(user)))
