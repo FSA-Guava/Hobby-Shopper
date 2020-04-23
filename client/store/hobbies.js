@@ -41,7 +41,7 @@ export const fetchHobbies = () => {
 export const fetchNewHobby = hobby => {
   return async dispatch => {
     try {
-      const {data} = axios.post('/api/hobbies', hobby)
+      const {data} = await axios.post('/api/hobbies', hobby)
       dispatch(addedHobby(data))
     } catch (error) {
       console.log('Error creating hobby')

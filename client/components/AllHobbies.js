@@ -11,7 +11,7 @@ class AllHobbies extends React.Component {
   }
 
   render() {
-    const hobbies = this.props
+    const {hobbies} = this.props
     return (
       <div>
         <h1>Here's the ALL Hobbies Page!</h1>
@@ -19,10 +19,12 @@ class AllHobbies extends React.Component {
           hobbies.map(hobby => {
             return (
               <div key={hobby.id}>
-                <Link to={`/hobbies/${hobby.id}`}>
-                  <ul name={hobby.name}>What You'll Learn: {hobby.name}</ul>
-                  <img src={hobby.imageUrl} />
-                </Link>
+                <ul>
+                  <Link to={`/hobbies/${hobby.id}`}>
+                    <h3 name={hobby.name}>Hobby Name: {hobby.name}</h3>
+                    <img src={hobby.imageUrl} />
+                  </Link>
+                </ul>
               </div>
             )
           })}
@@ -46,5 +48,4 @@ const mapToDispatch = dispatch => {
   }
 }
 
-// NOTE...this may be exported via connect later.
 export default connect(mapToState, mapToDispatch)(AllHobbies)
