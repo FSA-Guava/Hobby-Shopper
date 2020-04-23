@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 // import the thunk so we can get it into the dispatch
+import {fetchHobbies, fetchNewHobby, deleteHobby} from '../store/hobbies'
 
 class AllHobbies extends React.Component {
   componentDidMount() {
@@ -39,9 +40,9 @@ const mapToState = state => {
 const mapToDispatch = dispatch => {
   // set a key that refers to the thunk.
   return {
-    getHobbies: () => {
-      dispatch(/*INSERT THUNK HERE*/)
-    }
+    getHobbies: () => dispatch(fetchHobbies()),
+    getHobby: hobby => dispatch(fetchNewHobby(hobby)),
+    removeHobby: id => dispatch(deleteHobby(id))
   }
 }
 
