@@ -8,27 +8,43 @@ const Navbar = props => {
   const {handleClick, isLoggedIn} = props
   return (
     <div className="navBar">
-      <span onClick={() => props.history.push('/')}>Hobby Shopper!</span>
-      <div />
-
-      <nav>
-        {isLoggedIn ? (
-          <div>
-            {/* The navbar will show these links after you log in */}
-            <Link to="/profile">Profile</Link>
-            <a href="#" onClick={handleClick}>
+      <div className="navBar">
+        <span onClick={() => props.history.push('/')} className="siteName">
+          Hobby Shopper!
+        </span>
+        <Link to="/hobbies" className="navLink">
+          All Hobbies
+        </Link>
+      </div>
+      {isLoggedIn ? (
+        <div className="navBar">
+          {/* The navbar will show these links after you log in */}
+          <ul>
+            <Link to="/profile" className="navLink">
+              Profile
+            </Link>
+          </ul>
+          <ul>
+            <a href="#" onClick={handleClick} className="navLink">
               Logout
             </a>
-          </div>
-        ) : (
-          <div>
-            {/* The navbar will show these links before you log in */}
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
-          </div>
-        )}
-      </nav>
-      <hr />
+          </ul>
+        </div>
+      ) : (
+        <div className="navBar">
+          {/* The navbar will show these links before you log in */}
+          <ul>
+            <Link to="/login" className="navLink">
+              Login
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/signup" className="navLink">
+              Sign Up
+            </Link>
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
