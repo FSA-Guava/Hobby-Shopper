@@ -25,7 +25,9 @@ const REMOVE_USER = 'REMOVE_USER'
 /**
  * INITIAL STATE
  */
-const defaultUser = {}
+const defaultUser = {
+  activeOrder: {}
+}
 
 /**
  * ACTION CREATORS
@@ -40,10 +42,14 @@ export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
     let user
-    if (res.data) {
+    console.log(res.data)
+    if (res.data.orders) {
       //checking if the user exists, if it exists we set its active branch as a property and we take it out of the orders array
       user = setActiveOrder(res.data)
+    } else {
+      user = res.data
     }
+
     dispatch(getUser(user || defaultUser))
   } catch (err) {
     console.error(err)

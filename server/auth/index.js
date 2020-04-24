@@ -13,6 +13,9 @@ router.post('/login', async (req, res, next) => {
         include: Hobby
       }
     })
+    // const hobbies = req.session.activeOrder.hobbies
+    // await order.addHobbies(hobbies)
+    // await order.reload()
     if (!user) {
       console.log('No such user found:', req.body.email)
       res.status(401).send('Wrong username and/or password')
@@ -39,7 +42,7 @@ router.post('/signup', async (req, res, next) => {
       }
     )
     // waiting for session.order.hobbies to exist
-    // const hobbies = req.session.order.hobbies
+    // const hobbies = req.session.activeOrder.hobbies
     // await order.addHobbies(hobbies)
     // await order.reload()
     await user.addOrder(order)
@@ -61,8 +64,13 @@ router.post('/logout', (req, res) => {
 })
 
 router.get('/me', (req, res) => {
+  let user = {}
+
+  if (!req.user) {
+    user.activeOrder = req.session.activeOrder
+  }
   console.log(req.user, 'req.user')
-  res.json(req.user)
+  res.json(req.user || user)
 })
 
 router.use('/google', require('./google'))
