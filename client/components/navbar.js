@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
 const Navbar = props => {
-  const {handleClick, isLoggedIn} = props
+  const {handleClick, isLoggedIn, isAdmin, isInstructor} = props
   return (
     <div className="navBar">
       <div className="navBar">
@@ -19,6 +19,20 @@ const Navbar = props => {
       {isLoggedIn ? (
         <div className="navBar">
           {/* The navbar will show these links after you log in */}
+          {isAdmin && (
+            <div className="navBar">
+              <Link to="/admin" className="navLink">
+                Dashboard
+              </Link>
+            </div>
+          )}
+          {(isInstructor || isAdmin) && (
+            <div className="navBar">
+              <Link to="/hobbies/add" className="navLink">
+                Make Your Hobby Class
+              </Link>
+            </div>
+          )}
           <ul>
             <Link to="/profile" className="navLink">
               Profile
@@ -28,6 +42,11 @@ const Navbar = props => {
             <a href="#" onClick={handleClick} className="navLink">
               Logout
             </a>
+          </ul>
+          <ul>
+            <Link to="/cart" className="shoppingCart">
+              <i className="fas fa-shopping-cart" />
+            </Link>
           </ul>
         </div>
       ) : (
@@ -43,6 +62,11 @@ const Navbar = props => {
               Sign Up
             </Link>
           </ul>
+          <ul>
+            <Link to="/cart" className="shoppingCart">
+              <i className="fas fa-shopping-cart" />
+            </Link>
+          </ul>
         </div>
       )}
     </div>
@@ -54,7 +78,9 @@ const Navbar = props => {
  */
 const mapState = state => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    isAdmin: state.user.isAdmin,
+    isInstructor: state.user.isInstructor
   }
 }
 

@@ -37,4 +37,10 @@ form div {
 
 .siteName {
   font-size: x-large;
+  margin-right: 20px;
+}
+
+.shoppingCart {
+  font-size: 25px;
+  color: white;
 }
