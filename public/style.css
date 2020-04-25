@@ -19,3 +19,28 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.navBar {
+  display: flex;
+  background-color: rgb(60, 57, 57);
+  color: white;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navLink {
+  color: white;
+}
+
+.siteName {
+  font-size: x-large;
+  margin-right: 20px;
+}
+
+.shoppingCart {
+  font-size: 25px;
+  color: white;
+}
