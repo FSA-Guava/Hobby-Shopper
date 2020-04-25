@@ -73,14 +73,15 @@ const createApp = () => {
   app.use(async (req, res, next) => {
     try {
       if (!req.user && !req.session.activeOrder) {
-        req.session.activeOrder = await Order.create(
+        const activeOrder = await Order.create(
           {},
           {
             include: [Hobby]
           }
         )
+        req.session.activeOrder = activeOrder
       }
-      console.log(req.session)
+
       next()
     } catch (err) {
       next(err)

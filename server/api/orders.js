@@ -1,9 +1,9 @@
 const router = require('express').Router()
-const {Order, Hobby, User} = require('../db/index')
+const {Order, Hobby, User} = require('../db/models')
 
 router.get('/', async (req, res, next) => {
   try {
-    const foundOrders = await Order.findAll({include: [User, Hobby]})
+    const foundOrders = await Order.findAll({include: [Hobby]})
     res.status(200).json(foundOrders)
   } catch (error) {
     next(error)
@@ -177,8 +177,9 @@ router.put('/:userId/checkout', async (req, res, next) => {
   try {
     const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId,
-        isActive: true
+        userId: req.params.userId === 'guest' ? null : req.params.userId,
+        isActive: true,
+        id: req.body.id
       },
       include: [User]
     })
