@@ -37,6 +37,8 @@ export class AdminComponent extends Component {
       this.props[this.state.selected] && this.props[this.state.selected][0]
         ? Object.keys(this.props[this.state.selected][0])
         : []
+
+    headers.unshift('Edit') //this is for addding a edit column
     return (
       <div>
         <ul className="menu">
@@ -67,9 +69,19 @@ export class AdminComponent extends Component {
               console.log('THIS IS CATEGORY>>>>>>', category)
               return (
                 <tr key={category.id}>
-                  {headers.map(header => {
+                  <td
+                    className="editButton"
+                    onClick={() =>
+                      this.props.history.push(
+                        `/${this.state.selected}/${category.id}/edit`
+                      )
+                    }
+                  >
+                    <i className="fa fa-pencil-square-o" aria-hidden="true" />
+                  </td>
+                  {headers.slice(1).map(header => {
                     if (typeof category[header] !== 'object') {
-                      return <td>{category[header]}</td>
+                      return <td>{`${category[header]}`}</td>
                     } else {
                       return <td>{JSON.stringify(category[header])}</td>
                     }
