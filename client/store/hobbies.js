@@ -41,6 +41,7 @@ export const fetchHobbies = () => {
 export const fetchNewHobby = hobby => {
   return async dispatch => {
     try {
+      hobby.tags = hobby.tags.split(' ')
       const {data} = await axios.post('/api/hobbies', hobby)
       dispatch(addedHobby(data))
     } catch (error) {
