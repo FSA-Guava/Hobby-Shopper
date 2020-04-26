@@ -6,9 +6,11 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import hobbiesReducer from './hobbies'
 import singleHobbyReducer from './singleHobby'
+import cartReducer from './cart'
 
 const reducer = combineReducers({
   user,
+  cart: cartReducer,
   hobbies: hobbiesReducer,
   hobby: singleHobbyReducer
 })

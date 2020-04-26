@@ -6,24 +6,25 @@ export class Cart extends React.Component {
   componentDidMount() {}
 
   render() {
-    const {user} = this.props
-    console.log('this.props>>>>', this.props.user)
+    const {user, cart} = this.props
     return (
       <div>
         <h2>Welcome to your cart {user.name}</h2>
-        <h2>
-          {' '}
-          Order Hobbies:{' '}
-          {user.activeOrder.hobbies
-            ? user.activeOrder.hobbies.map(hobby => (
-                <div key={hobby.id}>
-                  <li> {hobby.name} </li>
-                  <h4> ${hobby.price}</h4>
-                </div>
+        <h2>Order Hobbies: </h2>
+        <ul>
+          {cart.hobbies
+            ? cart.hobbies.map(hobby => (
+                <li key={hobby.id} className="cartItem">
+                  <span>{hobby.name}:</span>
+                  <div className="cartPrice">
+                    <span>${hobby.price}</span>
+                    <button type="submit">Delete</button>
+                  </div>
+                </li>
               ))
             : null}
-        </h2>
-        <h2> Total Price: {user.activeOrder.totalPrice}</h2>
+        </ul>
+        <h2> Total Price: ${user.activeOrder.totalPrice}</h2>
         <h3 />
         <button type="button" onClick={() => {}}>
           Checkout
@@ -35,10 +36,11 @@ export class Cart extends React.Component {
 /*
         - Render User Name on top
         - Render all current hobbies in active order
-        - Delete an item with a button
         - Render price next to hobby
         - Render total price at bottom of cart
         - Include button to checkout and complete order
+        
+        - Delete an item with a button
 
         - Guest Cart:
         - Merge guest cart into user cart when logging in?
@@ -46,7 +48,8 @@ export class Cart extends React.Component {
 
 const mapToState = state => {
   return {
-    user: state.user
+    user: state.user,
+    cart: state.cart
   }
 }
 

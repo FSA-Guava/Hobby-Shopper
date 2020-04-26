@@ -21,6 +21,8 @@ const setActiveOrder = user => {
  */
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
+const ADD_ITEM = 'ADD_ITEM'
+const REMOVE_ITEM = 'REMOVE_ITEM'
 
 /**
  * INITIAL STATE
@@ -91,6 +93,10 @@ export default function(state = defaultUser, action) {
       return action.user
     case REMOVE_USER:
       return defaultUser
+    case ADD_ITEM:
+      return {...state, activeOrder: action.order}
+    case REMOVE_ITEM:
+      return {...state, activeOrder: action.order}
     default:
       return state
   }
