@@ -27,8 +27,10 @@ router.get('/:id', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   try {
     const hobby = await Hobby.findByPk(req.params.id)
-    const updatedHobby = hobby.update(req.body)
-    res.json(updatedHobby)
+    console.log('req.body>>>>', req.body)
+    await hobby.update(req.body)
+    await hobby.reload()
+    res.json(hobby)
   } catch (error) {
     next(error)
   }
@@ -47,12 +49,17 @@ router.post('/', async (req, res, next) => {
 // Delete a hobby by id
 router.delete('/:hobbyId', async (req, res, next) => {
   try {
-    const deletedHobby = await Hobby.destroy({
+    const deletedHobby = await Hobby.findOne({
       where: {
         id: req.params.hobbyId
       }
     })
-    res.status(204).json(deletedHobby)
+    if (deletedHobby) {
+      await deletedHobby.destroy()
+      res.status(200).json(deletedHobby)
+    } else {
+      res.sendStatus(404)
+    }
   } catch (error) {
     next(error)
   }

@@ -31,23 +31,19 @@ class Routes extends Component {
       <div>
         <Route path="/" component={Navbar} />
         <Switch>
-          {/* Routes placed here are available to all visitors */}
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route exact path="/hobbies" component={AllHobbies} />
           {(isAdmin || isInstructor) && (
             <Route exact path="/hobbies/add" component={HobbyForm} />
           )}
-          <Route exact path="/hobbies/:id" component={SingleHobby} />
-          {isLoggedIn && (
-            <Fragment>
-              {/* Routes placed here are only available after logging in */}
-              <Route path="/profile" component={UserProfile} />
-              {isAdmin && <Route path="/admin" component={AdminComponent} />}
-            </Fragment>
+          {(isAdmin || isInstructor) && (
+            <Route exact path="/hobbies/:id/edit" component={HobbyForm} />
           )}
-          {/* Displays our Login component as a fallback */}
-          <Route component={Login} />
+          <Route path="/hobbies/:id" component={SingleHobby} />
+          {isLoggedIn && <Route path="/profile" component={UserProfile} />}
+          {isLoggedIn &&
+            isAdmin && <Route path="/admin" component={AdminComponent} />}
         </Switch>
       </div>
     )
