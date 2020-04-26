@@ -141,6 +141,7 @@ router.put('/:userId/add/:hobbyId', async (req, res, next) => {
     }
     const foundHobby = await Hobby.findByPk(req.params.hobbyId)
     console.log('containsHobby', containsHobby)
+
     if (foundOrder && foundHobby && !containsHobby) {
       await foundOrder.addHobby(foundHobby)
       await foundOrder.reload()
@@ -170,6 +171,7 @@ router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
     const containsHobby = foundOrder.hobbies.filter(
       hobby => hobby.id === Number(req.params.hobbyId)
     ).length
+
     const foundHobby = await Hobby.findByPk(req.params.hobbyId)
     if (foundOrder && foundHobby && containsHobby) {
       await foundOrder.removeHobby(foundHobby)
