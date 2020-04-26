@@ -1,9 +1,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {removeItem} from '../store/cart'
 
 export class Cart extends React.Component {
+  constructor() {
+    super()
+    this.removeFromCart = this.removeFromCart.bind(this)
+  }
   componentDidMount() {}
+
+  removeFromCart(hobby) {
+    this.props.removeItem(this.props.user, hobby)
+  }
 
   render() {
     const {user, cart} = this.props
@@ -18,7 +27,12 @@ export class Cart extends React.Component {
                   <span>{hobby.name}:</span>
                   <div className="cartPrice">
                     <span>${hobby.price}</span>
-                    <button type="submit">Delete</button>
+                    <button
+                      type="submit"
+                      onClick={() => this.removeFromCart(hobby)}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </li>
               ))
@@ -53,8 +67,10 @@ const mapToState = state => {
   }
 }
 
-// const mapToDispatch = dispatch => {
+const mapToDispatch = dispatch => {
+  return {
+    removeItem: (user, hobby) => dispatch(removeItem(user, hobby))
+  }
+}
 
-// }
-
-export default connect(mapToState)(Cart)
+export default connect(mapToState, mapToDispatch)(Cart)
