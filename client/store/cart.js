@@ -12,6 +12,9 @@ const addedItem = order => ({type: ADD_ITEM, order})
 const removedItem = order => ({type: REMOVE_ITEM, order})
 
 //THUNK CREATOR
+let initialState = {
+  hobbies: []
+}
 
 export const addItem = (user, hobby) => {
   return async function(dispatch) {
@@ -65,7 +68,7 @@ export const removeItem = (user, hobby) => {
 // initialState: { }
 
 //reducer
-export default function(state = {}, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case GET_USER:
       return action.user.activeOrder

@@ -68,6 +68,11 @@ router.get('/me', (req, res) => {
 
   if (!req.user) {
     user.activeOrder = req.session.activeOrder
+    if (user.activeOrder.hobbies) {
+      console.log('hobbiesArray', user.activeOrder.hobbies)
+    } else {
+      user.activeOrder.hobbies = []
+    }
   }
   console.log(req.user, 'req.user')
   res.json(req.user || user)

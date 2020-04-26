@@ -109,14 +109,16 @@ router.get('/:userId/all', async (req, res, next) => {
 router.put('/:userId/add/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
+    console.log('req.params', req.body)
     const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId === 'guest' ? null : req.params.userId,
+        // userId: req.params.userId === 'guest' ? "null" : req.params.userId,
         isActive: true,
         id: req.body.id
       },
       include: [Hobby]
     })
+    console.log('foundOrder', foundOrder)
     // finding all active orders based on userId
     let userOrders
     let containsHobby
