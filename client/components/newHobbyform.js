@@ -10,13 +10,18 @@ export class HobbyForm extends Component {
   constructor() {
     super()
     this.state = {
-      name: '',
-      description: '',
-      price: 0,
-      imageUrl: '',
-      subject: '',
-      tags: '',
-      openSeats: 20
+      model: {
+        name: '',
+        description: '',
+        price: 0,
+        imageUrl: '',
+        subject: '',
+        tags: '',
+        openSeats: 20
+      },
+      wasDeleted: false,
+      wasUpdated: false,
+      wasCreated: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -41,16 +46,17 @@ export class HobbyForm extends Component {
       this.props.getHobby(id) // resets the store's state
       const {data} = await axios.get(`/api/hobbies/${id}`)
       delete data.rating // this will delete the ratings prop from extracted data
-      this.setState(data)
+      data.tags = data.tags.join(', ')
+      this.setState({model: data})
     } catch (error) {
       console.log(error)
     }
   }
 
   handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+    const newState = {...this.state}
+    newState.model[event.target.name] = event.target.value
+    this.setState(newState)
   }
 
   handleSubmit(event) {
@@ -59,19 +65,55 @@ export class HobbyForm extends Component {
     const editPath = this.props.location.pathname.match('edit')
     if (editPath) {
       // this function will fill the form with hobby info
-      this.props.updateHobby(this.props.match.params.id, this.state)
+      this.props.updateHobby(this.props.match.params.id, this.state.model)
+      this.setState({wasUpdated: true})
     } else {
-      this.props.newHobby(this.state)
+      this.props.newHobby(this.state.model)
+      this.setState({wasCreated: true})
     }
   }
 
   handleDelete() {
-    this.props.removeHobby(this.state.id)
+    this.props.removeHobby(this.state.model.id)
+    this.setState({wasDeleted: true})
   }
 
   render() {
-    console.log('state>>>', this.state)
-    return (
+    return this.state.wasDeleted ? (
+      <div>
+        <h1>The resource was successfully deleted!</h1>
+        <button
+          onClick={() => this.props.history.push('/hobbies')}
+          type="button"
+        >
+          Return to All Hobbies
+        </button>
+      </div>
+    ) : this.state.wasUpdated ? (
+      <div>
+        <h1>The resource was successfully updated!</h1>
+        <button
+          onClick={() =>
+            this.props.history.push(`/hobbies/${this.props.match.params.id}`)
+          }
+          type="button"
+        >
+          See your changes here!
+        </button>
+      </div>
+    ) : this.state.wasCreated ? (
+      <div>
+        <h1>The resource was successfully created!</h1>
+        <button
+          onClick={() =>
+            this.props.history.push(`/hobbies/${this.props.singleHobby.id}`)
+          }
+          type="button"
+        >
+          See your new resource here!
+        </button>
+      </div>
+    ) : (
       <div className="formDiv">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name: </label>
@@ -80,7 +122,7 @@ export class HobbyForm extends Component {
             name="name"
             type="text"
             placeholder="Name of your Class"
-            value={this.state.name}
+            value={this.state.model.name}
           />
           <label htmlFor="description">Description: </label>
           <textarea
@@ -89,14 +131,14 @@ export class HobbyForm extends Component {
             type=""
             placeholder="What You’ll
                     Teach"
-            value={this.state.description}
+            value={this.state.model.description}
           />
           <label htmlFor="price">Price: </label>
           <input
             onChange={this.handleChange}
             name="price"
             type="number"
-            value={this.state.price}
+            value={this.state.model.price}
           />
           <label htmlFor="imageUrl">Cover Photo: </label>
           <input
@@ -104,7 +146,7 @@ export class HobbyForm extends Component {
             name="imageUrl"
             type="text"
             placeholder="Cover Photo"
-            value={this.state.imageUrl}
+            value={this.state.model.imageUrl}
           />
           <label htmlFor="subject">Subject: </label>
           <input
@@ -112,7 +154,7 @@ export class HobbyForm extends Component {
             name="subject"
             type="text"
             placeholder="What kind of Hobby is it?"
-            value={this.state.subject}
+            value={this.state.model.subject}
           />
           <label htmlFor="tags">Tags:</label>
           <input
@@ -120,13 +162,13 @@ export class HobbyForm extends Component {
             name="tags"
             type="text"
             placeholder="Key search terms"
-            value={this.state.tags}
+            value={this.state.model.tags}
           />
           <label htmlFor="openSeats">Number of Seats:</label>
           <select
             onChange={this.handleChange}
             name="openSeats"
-            value={this.state.openSeats}
+            value={this.state.model.openSeats}
             selected
           >
             {selectArr.map((val, index) => {
