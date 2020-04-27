@@ -60,6 +60,13 @@ const Hobby = db.define('hobby', {
   }
 })
 
+const setForDefault = hobby => {
+  if (!hobby.imageUrl.length) {
+    hobby.imageUrl = undefined
+  }
+}
+
+Hobby.beforeValidate(setForDefault)
 module.exports = Hobby
 
 // NOTE: Hobby model should have user/instructor added via association
