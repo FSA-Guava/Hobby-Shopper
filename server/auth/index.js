@@ -7,6 +7,15 @@ module.exports = router
 router.post('/login', async (req, res, next) => {
   try {
     const user = await User.findOne({
+      attributes: [
+        'id',
+        'email',
+        'name',
+        'imageUrl',
+        'isInstructor',
+        'password',
+        'salt'
+      ],
       where: {email: req.body.email},
       include: {
         model: Order,
@@ -29,9 +38,18 @@ router.post('/login', async (req, res, next) => {
 
 router.post('/signup', async (req, res, next) => {
   try {
-    const user = await User.create(req.body, {
-      include: [Order]
-    })
+    const user = await User.create(
+      {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        imageUrl: req.body.imageUrl,
+        isInstructor: req.body.isInstructor
+      },
+      {
+        include: [Order]
+      }
+    )
     const order = await Order.create(
       {},
       {
@@ -61,8 +79,17 @@ router.post('/logout', (req, res) => {
 })
 
 router.get('/me', (req, res) => {
+  delete req.user.isAdmin
   console.log(req.user, 'req.user')
-  res.json(req.user)
+  const parsedUser = {
+    id: req.user.id,
+    orders: req.user.orders,
+    name: req.user.name,
+    isInstructor: req.user.isInstructor,
+    email: req.user.email,
+    imageUrl: req.user.imageUrl
+  }
+  res.json(parsedUser)
 })
 
 router.use('/google', require('./google'))

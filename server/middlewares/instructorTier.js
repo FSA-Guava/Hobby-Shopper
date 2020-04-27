@@ -1,5 +1,7 @@
+/* eslint-disable complexity */
 const isInstructorMiddleware = (req, res, next) => {
   const currentUser = req.user
+  console.log(req.user)
   if (currentUser && currentUser.isInstructor) {
     if (req.params.userId && req.params.userId === currentUser.id) {
       next()
@@ -14,7 +16,7 @@ const isInstructorMiddleware = (req, res, next) => {
     const error = new Error(
       "Wait...you're not an instructor. YOU SHALL NOT PASS!"
     )
-    error.status(401)
+    error.status = 401
     next(error)
   }
 }
