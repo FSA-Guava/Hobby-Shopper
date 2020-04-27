@@ -1,9 +1,14 @@
 body {
+  margin: 0px;
   /* font-family: sans-serif; */
   /* font-family: Comic Sans MS; */
-  /* font-family: Chalkduster; */
+  /* font-family: Chalkduster; // ONLY HOBBY SHOPPER LOGO STUFF! */
   /* font-family: Stencil Std; */
-  font-family: Marker Felt;
+  /* font-family: Marker Felt; */
+  /* background-size: 300vw 100vw; */
+  /* background-repeat: repeat-x; */
+
+  background: url(http://api.thumbr.it/whitenoise-361x370.png?background=ebeff0ff&noise=d4cdd4&density=19&opacity=21);
 }
 
 a {
@@ -23,7 +28,6 @@ form div {
   margin: 1em;
   display: inline-block;
 }
-
 
 .cartItem {
   display: flex;
@@ -46,15 +50,31 @@ form div {
   text-decoration: underline;
 }
 
-.navBar {
+.navBar-Main {
+  box-shadow: 0px 10px 12px 0px rgb(0, 0, 0);
   display: flex;
-  background-color: rgb(60, 57, 57);
+  /* background-color: rgb(60, 57, 57); */
+  background-color: #453f78;
   color: white;
   justify-content: space-between;
   height: 75px;
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  min-width: 100px;
+}
+
+.navBar {
+  display: flex;
+  /* background-color: rgb(60, 57, 57); */
+  background-color: #453f78;
+  color: white;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 100px;
 }
 
 .navLink {
@@ -62,7 +82,8 @@ form div {
 }
 
 .siteName {
-  font-size: x-large;
+  font-family: 'Alfa Slab One';
+  font-size: 60px;
   margin-right: 20px;
 }
 .formDiv {

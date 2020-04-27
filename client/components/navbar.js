@@ -7,10 +7,10 @@ import {logout} from '../store'
 const Navbar = props => {
   const {handleClick, isLoggedIn, isAdmin, isInstructor} = props
   return (
-    <div className="navBar">
+    <div className="navBar-Main">
       <div className="navBar">
         <span onClick={() => props.history.push('/')} className="siteName">
-          Hobby Shopper!
+          HS
         </span>
         <Link to="/hobbies" className="navLink">
           All Hobbies

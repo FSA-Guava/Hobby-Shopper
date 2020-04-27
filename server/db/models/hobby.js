@@ -17,7 +17,7 @@ const Hobby = db.define('hobby', {
     }
   },
   price: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.FLOAT, // use STRING or INTEGER with cents instead of FLOAT (consider where conversions would occur)
     allowNull: false,
     validate: {
       min: 0
