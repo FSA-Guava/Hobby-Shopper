@@ -111,16 +111,13 @@ export const removeItem = (user, hobby) => {
   }
 }
 
-//initialState
-// initialState: { }
-
 //reducer
 export default function(state = initialState, action) {
   switch (action.type) {
     case GET_USER:
       return action.user.activeOrder ? action.user.activeOrder : {}
     case REMOVE_USER:
-      return {}
+      return initialState
     case ADD_ITEM:
       return action.order
     case REMOVE_ITEM:
