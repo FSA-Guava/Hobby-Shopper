@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const {Order, Hobby, User} = require('../db/models')
 
+// security layer: admin authorization
 router.get('/', async (req, res, next) => {
   try {
     // NOTE: removed user from findAll
@@ -11,6 +12,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization
 router.get('/:orderId', async (req, res, next) => {
   try {
     const foundOrder = await Order.findByPk(req.params.orderId)
@@ -25,6 +27,7 @@ router.get('/:orderId', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization
 router.put('/:orderId', async (req, res, next) => {
   try {
     const foundOrder = await Order.findByPk(req.params.orderId)
@@ -41,6 +44,7 @@ router.put('/:orderId', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, authenticated user
 router.post('/', async (req, res, next) => {
   try {
     const newOrder = await Order.create(req.body, {include: [Hobby]})
@@ -58,6 +62,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization
 router.delete('/:orderId', async (req, res, next) => {
   try {
     const foundOrder = await Order.findByPk(req.params.orderId)
@@ -74,6 +79,7 @@ router.delete('/:orderId', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, authenticated user (when viewing their own order history)
 // this is to find a single active order related to a user
 router.get('/:userId/active', async (req, res, next) => {
   try {
@@ -94,6 +100,7 @@ router.get('/:userId/active', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, authenticated user (when viewing their own orders)
 // all orders associated with a user
 router.get('/:userId/all', async (req, res, next) => {
   try {
@@ -110,6 +117,7 @@ router.get('/:userId/all', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, authenticated user (when adding to their own cart)
 router.put('/:userId/add/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
@@ -161,6 +169,7 @@ router.put('/:userId/add/:hobbyId', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, authenticated user (when removing items from their own cart)
 router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
@@ -193,6 +202,7 @@ router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, authenticated user (AND GUEST??)
 router.put('/:userId/checkout', async (req, res, next) => {
   try {
     const foundOrder = await Order.findOne({
