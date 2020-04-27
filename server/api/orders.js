@@ -1,9 +1,10 @@
 const router = require('express').Router()
-const {Order, Hobby, User} = require('../db/index')
+const {Order, Hobby, User} = require('../db/models')
 
 router.get('/', async (req, res, next) => {
   try {
-    const foundOrders = await Order.findAll({include: [User, Hobby]})
+    // NOTE: removed user from findAll
+    const foundOrders = await Order.findAll({include: [Hobby]})
     res.status(200).json(foundOrders)
   } catch (error) {
     next(error)
