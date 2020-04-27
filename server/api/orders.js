@@ -3,6 +3,7 @@ const {Order, Hobby, User} = require('../db/models')
 
 router.get('/', async (req, res, next) => {
   try {
+    // NOTE: removed user from findAll
     const foundOrders = await Order.findAll({include: [Hobby]})
     res.status(200).json(foundOrders)
   } catch (error) {

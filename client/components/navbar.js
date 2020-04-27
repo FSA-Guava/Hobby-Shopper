@@ -4,36 +4,83 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <h1>BOILERMAKER</h1>
-    <nav>
+const Navbar = props => {
+  const {handleClick, isLoggedIn, isAdmin, isInstructor} = props
+  return (
+    <div className="navBar">
+      <div className="navBar">
+        <span onClick={() => props.history.push('/')} className="siteName">
+          Hobby Shopper!
+        </span>
+        <Link to="/hobbies" className="navLink">
+          All Hobbies
+        </Link>
+      </div>
       {isLoggedIn ? (
-        <div>
+        <div className="navBar">
           {/* The navbar will show these links after you log in */}
-          <Link to="/profile">Profile</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
+          {isAdmin && (
+            <div className="navBar">
+              <Link to="/admin" className="navLink">
+                Dashboard
+              </Link>
+            </div>
+          )}
+          {(isInstructor || isAdmin) && (
+            <div className="navBar">
+              <Link to="/hobbies/add" className="navLink">
+                Make Your Hobby Class
+              </Link>
+            </div>
+          )}
+          <ul>
+            <Link to="/profile" className="navLink">
+              Profile
+            </Link>
+          </ul>
+          <ul>
+            <a href="#" onClick={handleClick} className="navLink">
+              Logout
+            </a>
+          </ul>
+          <ul>
+            <Link to="/cart" className="shoppingCart">
+              <i className="fas fa-shopping-cart" />
+            </Link>
+          </ul>
         </div>
       ) : (
-        <div>
+        <div className="navBar">
           {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <ul>
+            <Link to="/login" className="navLink">
+              Login
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/signup" className="navLink">
+              Sign Up
+            </Link>
+          </ul>
+          <ul>
+            <Link to="/cart" className="shoppingCart">
+              <i className="fas fa-shopping-cart" />
+            </Link>
+          </ul>
         </div>
       )}
-    </nav>
-    <hr />
-  </div>
-)
+    </div>
+  )
+}
 
 /**
  * CONTAINER
  */
 const mapState = state => {
   return {
-    isLoggedIn: !!state.user.id
+    isLoggedIn: !!state.user.id,
+    isAdmin: state.user.isAdmin,
+    isInstructor: state.user.isInstructor
   }
 }
 

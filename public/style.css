@@ -20,6 +20,7 @@ form div {
   display: inline-block;
 }
 
+
 .cartItem {
   display: flex;
   justify-content: space-between;
@@ -39,4 +40,49 @@ form div {
   font-size: 44px;
   color: hotpink;
   text-decoration: underline;
+}
+
+.navBar {
+  display: flex;
+  background-color: rgb(60, 57, 57);
+  color: white;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navLink {
+  color: white;
+}
+
+.siteName {
+  font-size: x-large;
+  margin-right: 20px;
+}
+.formDiv {
+  display: flex;
+  justify-content: center;
+  padding-top: 35px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 550px;
+  width: 400px;
+}
+
+form > input {
+  margin-bottom: 10px;
+}
+
+form > select {
+  margin-bottom: 10px;
+}
+
+.shoppingCart {
+  font-size: 25px;
+  color: white;
 }

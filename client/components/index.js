@@ -11,3 +11,6 @@ export {default as AllHobbies} from './AllHobbies'
 export {default as SingleHobby} from './SingleHobby'
 export {default as Cart} from './Cart'
 export {default as Confirmation} from './Confirmation'
+// our admin component:
+export {default as AdminComponent} from './AdminComponent'
+export {default as HobbyForm} from './newHobbyform'

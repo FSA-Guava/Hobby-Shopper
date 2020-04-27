@@ -6,6 +6,7 @@ import {connect} from 'react-redux'
  * COMPONENT
  */
 export const UserHome = props => {
+  const hobbies = props.user.activeOrder.hobbies
   return (
     <div>
       <img src={props.user.imageUrl} />
@@ -17,9 +18,8 @@ export const UserHome = props => {
       <div>
         Hobbies in Cart:
         <ol>
-          {props.user.activeOrder.hobbies.map(hobby => (
-            <li key={hobby.id}>{hobby.name}</li>
-          ))}
+          {Array.isArray(hobbies) &&
+            hobbies.map(hobby => <li key={hobby.id}>{hobby.name}</li>)}
         </ol>
         Total Price: {props.user.activeOrder.totalPrice}
       </div>

@@ -26,7 +26,7 @@ export class SingleHobby extends React.Component {
         </ul>
         <ul>
           {hobby.tags && hobby.tags.length ? (
-            <li>This Hobby's Tags: {hobby.tags}</li>
+            <li>This Hobby's Tags: {hobby.tags.join(' ')}</li>
           ) : (
             <li>There aren't any tags for this hobby</li>
           )}
