@@ -34,3 +34,9 @@ form div {
 .cartPrice > span {
   margin-right: 20px;
 }
+
+.purchaseCode {
+  font-size: 44px;
+  color: hotpink;
+  text-decoration: underline;
+}

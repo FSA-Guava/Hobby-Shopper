@@ -42,8 +42,7 @@ router.put('/:orderId', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const newOrder = await Order.create(req.body)
-
+    const newOrder = await Order.create(req.body, {include: [Hobby]})
     if (newOrder) {
       res.status(201).send(newOrder)
     } else {

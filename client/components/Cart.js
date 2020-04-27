@@ -1,17 +1,26 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {removeItem} from '../store/cart'
+import {removeItem, completeOrder, createOrder} from '../store/cart'
 
 export class Cart extends React.Component {
   constructor() {
     super()
     this.removeFromCart = this.removeFromCart.bind(this)
+    this.checkoutButton = this.checkoutButton.bind(this)
   }
   componentDidMount() {}
 
   removeFromCart(hobby) {
     this.props.removeItem(this.props.user, hobby)
+  }
+
+  checkoutButton(userId, activeOrder, id) {
+    this.props.completeOrder(userId, activeOrder)
+    this.props.createOrder(id)
+    this.props.history.push('/confirmation')
+    //or can do
+    // onClick={() => {greeting() waveHello() }}
   }
 
   render() {
@@ -40,7 +49,12 @@ export class Cart extends React.Component {
         </ul>
         <h2> Total Price: ${user.activeOrder.totalPrice}</h2>
         <h3 />
-        <button type="button" onClick={() => {}}>
+        <button
+          type="button"
+          onClick={() =>
+            this.checkoutButton(user.id, user.activeOrder, user.id)
+          }
+        >
           Checkout
         </button>
       </div>
@@ -69,7 +83,10 @@ const mapToState = state => {
 
 const mapToDispatch = dispatch => {
   return {
-    removeItem: (user, hobby) => dispatch(removeItem(user, hobby))
+    removeItem: (user, hobby) => dispatch(removeItem(user, hobby)),
+    completeOrder: (userId, activeOrder) =>
+      dispatch(completeOrder(userId, activeOrder)),
+    createOrder: id => dispatch(createOrder(id))
   }
 }
 

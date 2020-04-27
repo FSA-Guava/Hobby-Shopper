@@ -9,7 +9,8 @@ import {
   UserProfile,
   AllHobbies,
   SingleHobby,
-  Cart
+  Cart,
+  Confirmation
 } from './components'
 
 import {me} from './store'
@@ -31,6 +32,7 @@ class Routes extends Component {
         <Route exact path="/cart" component={Cart} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/confirmation" component={Confirmation} />
         <Route exact path="/hobbies" component={AllHobbies} />
         <Route path="/hobbies/:id" component={SingleHobby} />
 
