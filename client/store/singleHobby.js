@@ -7,7 +7,7 @@ const GET_HOBBY = 'GET_HOBBY'
 const UPDATE_HOBBY = 'UPDATE_HOBBY'
 const REMOVE_HOBBY = 'REMOVE_HOBBY'
 const ADD_HOBBY = 'ADD_HOBBY'
-
+const DECREASED_SEAT = 'DECREASED_SEAT'
 // action creators
 const gotHobby = hobby => ({type: GET_HOBBY, hobby})
 const updatedHobby = hobby => ({type: UPDATE_HOBBY, hobby})
@@ -73,6 +73,8 @@ export default function singleHobbyReducer(state = initialState, action) {
       return initialState
     case ADD_HOBBY:
       return action.hobby
+    case DECREASED_SEAT:
+      return state.id === action.hobby.id ? action.hobby : {...state}
     default:
       return state
   }

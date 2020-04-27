@@ -156,7 +156,7 @@ router.put('/:userId/add/:hobbyId', async (req, res, next) => {
     const foundHobby = await Hobby.findByPk(req.params.hobbyId)
     console.log('containsHobby', containsHobby)
 
-    if (foundOrder && foundHobby && !containsHobby) {
+    if (foundOrder && foundHobby && !containsHobby && foundHobby.openSeats) {
       await foundOrder.addHobby(foundHobby)
       await foundOrder.reload()
       await foundOrder.getPrice()

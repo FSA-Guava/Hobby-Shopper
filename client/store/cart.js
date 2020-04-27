@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import {decreaseOpenSeats} from './hobbies'
 //action types
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
@@ -41,12 +41,14 @@ export const completeOrder = (userId, activeOrder) => {
           activeOrder
         )
         dispatch(completedOrder(data))
+        dispatch(decreaseOpenSeats(activeOrder.hobbies))
       } else {
         const {data} = await axios.put(
           `/api/orders/guest/checkout`,
           activeOrder
         )
         dispatch(completedOrder(data))
+        dispatch(decreaseOpenSeats(activeOrder.hobbies))
       }
     } catch (error) {
       console.log(error)
@@ -81,6 +83,9 @@ export const addItem = (user, hobby) => {
           `/api/orders/guest/add/${hobby.id}`,
           user.activeOrder
         )
+        if (res) {
+          await axios.put(`/api/hobbies/${hobby.id}/decrease`)
+        }
       }
       dispatch(addedItem(res.data))
     } catch (error) {

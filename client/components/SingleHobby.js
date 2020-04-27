@@ -22,9 +22,11 @@ export class SingleHobby extends React.Component {
           <li>Cost: {hobby.price}</li>
           <li>Hobby Category: {hobby.subject}</li>
           <li>Rating: {hobby.rating}</li>
-          <li>Available Seats: {hobby.openSeats}</li>
-        </ul>
-        <ul>
+          {!hobby.openSeats ? (
+            <li>This Hobby Class is full :sad:</li>
+          ) : (
+            <li>Available Seats: {hobby.openSeats}</li>
+          )}
           {hobby.tags && hobby.tags.length ? (
             <li>This Hobby's Tags: {hobby.tags.join(' ')}</li>
           ) : (
