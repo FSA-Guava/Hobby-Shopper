@@ -30,7 +30,8 @@ const CREATE_ORDER = 'CREATE_ORDER'
  * INITIAL STATE
  */
 const defaultUser = {
-  activeOrder: {}
+  activeOrder: {},
+  orders: []
 }
 
 /**
@@ -52,6 +53,7 @@ export const me = () => async dispatch => {
       user = setActiveOrder(res.data)
     } else {
       user = res.data
+      user.orders = []
     }
 
     dispatch(getUser(user || defaultUser))

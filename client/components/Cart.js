@@ -6,6 +6,9 @@ import {removeItem, completeOrder, createOrder} from '../store/cart'
 export class Cart extends React.Component {
   constructor() {
     super()
+    this.state = {
+      wasSubmitted: false
+    }
     this.removeFromCart = this.removeFromCart.bind(this)
     this.checkoutButton = this.checkoutButton.bind(this)
   }
@@ -18,14 +21,19 @@ export class Cart extends React.Component {
   checkoutButton(userId, activeOrder, id) {
     this.props.completeOrder(userId, activeOrder)
     this.props.createOrder(id)
-    this.props.history.push('/confirmation')
-    //or can do
-    // onClick={() => {greeting() waveHello() }}
+    this.setState({wasSubmitted: true})
   }
 
   render() {
     const {user, cart} = this.props
-    return (
+    return this.state.wasSubmitted ? (
+      <button
+        type="submit"
+        onClick={() => this.props.history.push('/confirmation')}
+      >
+        View Order Confirmation
+      </button>
+    ) : (
       <div>
         <h2>Welcome to your cart {user.name}</h2>
         <h2>Order Hobbies: </h2>

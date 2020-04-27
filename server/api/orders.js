@@ -44,6 +44,10 @@ router.post('/', async (req, res, next) => {
   try {
     const newOrder = await Order.create(req.body, {include: [Hobby]})
     if (newOrder) {
+      if (!req.user) {
+        req.session.activeOrder = newOrder
+      }
+
       res.status(201).send(newOrder)
     } else {
       res.sendStatus(400)

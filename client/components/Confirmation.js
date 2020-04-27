@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 class Confirmation extends React.Component {
   render() {
     const {user, cart} = this.props
+    console.log(user)
     const [last] = user.orders.sort(
       (first, second) => (first.id < second.id ? 1 : -1)
     )
@@ -30,7 +31,22 @@ class Confirmation extends React.Component {
             </div>
           </div>
         ) : (
-          <h3>Thank you for your purchase!</h3>
+          <div>
+            <h3>Thank you for your purchase!</h3>
+            <h3>
+              Here is your Purchase Code:{' '}
+              <span className="purchaseCode">{last.purchaseCode}</span>
+            </h3>
+            <div>
+              Purchased Hobbies:
+              <ol>
+                {last.hobbies.map(hobby => (
+                  <li key={hobby.id}>{hobby.name}</li>
+                ))}
+              </ol>
+              Total Price: ${last.totalPrice}
+            </div>
+          </div>
         )}
         <button
           type="submit"

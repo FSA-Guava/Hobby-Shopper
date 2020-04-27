@@ -35,11 +35,19 @@ let initialState = {
 export const completeOrder = (userId, activeOrder) => {
   return async function(dispatch) {
     try {
-      const {data} = await axios.put(
-        `/api/orders/${userId}/checkout`,
-        activeOrder
-      )
-      dispatch(completedOrder(data))
+      if (userId) {
+        const {data} = await axios.put(
+          `/api/orders/${userId}/checkout`,
+          activeOrder
+        )
+        dispatch(completedOrder(data))
+      } else {
+        const {data} = await axios.put(
+          `/api/orders/guest/checkout`,
+          activeOrder
+        )
+        dispatch(completedOrder(data))
+      }
     } catch (error) {
       console.log(error)
     }
@@ -47,7 +55,7 @@ export const completeOrder = (userId, activeOrder) => {
 }
 
 //create new blank order thunk creator
-export const createOrder = id => {
+export const createOrder = (id = null) => {
   return async function(dispatch) {
     try {
       const {data} = await axios.post('/api/orders', {userId: id})
