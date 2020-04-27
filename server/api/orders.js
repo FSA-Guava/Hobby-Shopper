@@ -43,9 +43,12 @@ router.put('/:orderId', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const newOrder = await Order.create(req.body)
-
+    const newOrder = await Order.create(req.body, {include: [Hobby]})
     if (newOrder) {
+      if (!req.user) {
+        req.session.activeOrder = newOrder
+      }
+
       res.status(201).send(newOrder)
     } else {
       res.sendStatus(400)
@@ -110,33 +113,46 @@ router.get('/:userId/all', async (req, res, next) => {
 router.put('/:userId/add/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
-    const activeOrder = await Order.findOne({
+    console.log('req.params', req.body)
+    const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId,
-        isActive: true
+        // userId: req.params.userId === 'guest' ? "null" : req.params.userId,
+        isActive: true,
+        id: req.body.id
       },
       include: [Hobby]
     })
+    console.log('foundOrder', foundOrder)
     // finding all active orders based on userId
-    const userOrders = await Order.findAll({
-      where: {
-        userId: req.params.userId
-      },
-      include: [Hobby]
-    })
-    // mapping through to find out if hobby already exists in user's past & active orders
-    // if not, adds hobby relationship to database and reloads/returns the updated order
-    const containsHobby = userOrders
-      .map(order =>
-        order.hobbies.filter(hobby => hobby.id === req.params.hobbyId)
-      )
-      .flat().length
+    let userOrders
+    let containsHobby
+    if (req.params.userId !== 'guest') {
+      userOrders = await Order.findAll({
+        where: {
+          userId: req.params.userId
+        },
+        include: [Hobby]
+      })
+      // mapping through to find out if hobby already exists in user's past & active orders
+      // if not, adds hobby relationship to database and reloads/returns the updated order
+      containsHobby = userOrders
+        .map(order =>
+          order.hobbies.filter(hobby => hobby.id === Number(req.params.hobbyId))
+        )
+        .flat().length
+    } else {
+      containsHobby = foundOrder.hobbies
+        .filter(hobby => hobby.id === Number(req.params.hobbyId))
+        .flat().length
+    }
     const foundHobby = await Hobby.findByPk(req.params.hobbyId)
-    if (activeOrder && foundHobby && !containsHobby) {
-      await activeOrder.addHobby(foundHobby)
-      await activeOrder.reload()
-      await activeOrder.getPrice()
-      res.sendStatus(200).json(activeOrder)
+    console.log('containsHobby', containsHobby)
+
+    if (foundOrder && foundHobby && !containsHobby) {
+      await foundOrder.addHobby(foundHobby)
+      await foundOrder.reload()
+      await foundOrder.getPrice()
+      res.status(200).json(foundOrder)
     } else {
       res.sendStatus(404)
     }
@@ -148,24 +164,27 @@ router.put('/:userId/add/:hobbyId', async (req, res, next) => {
 router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
-    const activeOrder = await Order.findOne({
+    const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId,
-        isActive: true
+        userId: req.params.userId === 'guest' ? null : req.params.userId,
+        isActive: true,
+        id: req.body.id
       },
       include: [Hobby]
     })
     // mapping through to find out if hobby already exists in user's past & active orders
     // if not, adds hobby relationship to database and reloads/returns the updated order
-    const containsHobby = activeOrder.hobbies.filter(
-      hobby => hobby.id === req.params.hobbyId
+    const containsHobby = foundOrder.hobbies.filter(
+      hobby => hobby.id === Number(req.params.hobbyId)
     ).length
+
     const foundHobby = await Hobby.findByPk(req.params.hobbyId)
-    if (activeOrder && foundHobby && containsHobby) {
-      await activeOrder.removeHobby(foundHobby)
-      await activeOrder.reload()
-      await activeOrder.getPrice()
-      res.sendStatus(200).json(activeOrder)
+    if (foundOrder && foundHobby && containsHobby) {
+      await foundOrder.removeHobby(foundHobby)
+      await foundOrder.reload()
+      await foundOrder.getPrice()
+      console.log('foundOrder', foundOrder)
+      res.status(200).json(foundOrder)
     } else {
       res.sendStatus(404)
     }
@@ -178,15 +197,14 @@ router.put('/:userId/checkout', async (req, res, next) => {
   try {
     const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId,
-        isActive: true
+        userId: req.params.userId === 'guest' ? null : req.params.userId,
+        isActive: true,
+        id: req.body.id
       },
-      include: [User]
+      include: [Hobby]
     })
-
     if (foundOrder) {
       await foundOrder.checkoutOrder()
-
       res.status(200).json(foundOrder)
     } else {
       res.sendStatus(404)

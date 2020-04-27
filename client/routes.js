@@ -9,6 +9,8 @@ import {
   UserProfile,
   AllHobbies,
   SingleHobby,
+  Cart,
+  Confirmation,
   Navbar,
   AdminComponent,
   HobbyForm
@@ -33,6 +35,8 @@ class Routes extends Component {
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/confirmation" component={Confirmation} />
+          <Route exact path="/cart" component={Cart} />
           <Route exact path="/hobbies" component={AllHobbies} />
           {(isAdmin || isInstructor) && (
             <Route exact path="/hobbies/add" component={HobbyForm} />
@@ -42,8 +46,7 @@ class Routes extends Component {
           )}
           <Route path="/hobbies/:id" component={SingleHobby} />
           {isLoggedIn && <Route path="/profile" component={UserProfile} />}
-          {isLoggedIn &&
-            isAdmin && <Route path="/admin" component={AdminComponent} />}
+          {(isLoggedIn && isAdmin) && <Route path="/admin" component={AdminComponent} />}
         </Switch>
       </div>
     )

@@ -6,14 +6,17 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import hobbiesReducer from './hobbies'
 import singleHobbyReducer from './singleHobby'
+import cartReducer from './cart'
 import adminReducer from './admin'
 
 const reducer = combineReducers({
   user,
   dashboard: adminReducer,
+  cart: cartReducer,
   hobbies: hobbiesReducer,
   hobby: singleHobbyReducer
 })
+
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )
