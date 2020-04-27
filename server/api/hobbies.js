@@ -3,6 +3,7 @@ const {Hobby} = require('../db/models')
 
 // NOTE: all these are mounted on 'api/hobbies'
 
+// security layer: none
 // Get all hobbies & get all users
 router.get('/', async (req, res, next) => {
   try {
@@ -13,6 +14,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+// security layer: none
 // Get single hobby
 router.get('/:id', async (req, res, next) => {
   try {
@@ -23,6 +25,7 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, instructor authorization (only if hobby belongs to them)
 // Update a particular Hobby by Id
 router.put('/:id', async (req, res, next) => {
   try {
@@ -36,6 +39,7 @@ router.put('/:id', async (req, res, next) => {
   }
 })
 
+// security layer: admin authorization, instructor authorization (only if hobby belongs to them)
 // Create a new Hobby
 router.post('/', async (req, res, next) => {
   try {
@@ -46,6 +50,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
+// security layer: admin authoriztion, instructor authorization (only if hobby belongs to them)
 // Delete a hobby by id
 router.delete('/:hobbyId', async (req, res, next) => {
   try {
