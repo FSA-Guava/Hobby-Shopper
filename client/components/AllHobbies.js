@@ -61,7 +61,9 @@ class AllHobbies extends React.Component {
                     <h3 name={hobby.name}>Hobby Name: {hobby.name}</h3>
                     <img src={hobby.imageUrl} />
                   </Link>
-                  {this.checkForBought(hobby) ? (
+                  {!hobby.openSeats ? (
+                    <p>This Hobby Class is full! :sad:</p>
+                  ) : this.checkForBought(hobby) ? (
                     <p>You Already Own This Product!</p>
                   ) : this.checkCart(hobby) ? (
                     <button

@@ -54,7 +54,7 @@ const Hobby = db.define('hobby', {
     type: Sequelize.INTEGER,
     defaultValue: 20,
     validate: {
-      min: 5,
+      min: 0,
       max: 30
     }
   }
