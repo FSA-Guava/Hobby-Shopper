@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -10,7 +10,8 @@ import {
   AllHobbies,
   SingleHobby,
   Navbar,
-  AdminComponent
+  AdminComponent,
+  HobbyForm
 } from './components'
 
 import {me} from './store'
@@ -24,26 +25,25 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn, isAdmin} = this.props
+    const {isLoggedIn, isAdmin, isInstructor} = this.props
 
     return (
       <div>
         <Route path="/" component={Navbar} />
         <Switch>
-          {/* Routes placed here are available to all visitors */}
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route exact path="/hobbies" component={AllHobbies} />
-          <Route path="/hobbies/:id" component={SingleHobby} />
-          {isLoggedIn && (
-            <Switch>
-              {/* Routes placed here are only available after logging in */}
-              <Route path="/profile" component={UserProfile} />
-              {isAdmin && <Route path="/admin" component={AdminComponent} />}
-            </Switch>
+          {(isAdmin || isInstructor) && (
+            <Route exact path="/hobbies/add" component={HobbyForm} />
           )}
-          {/* Displays our Login component as a fallback */}
-          <Route component={Login} />
+          {(isAdmin || isInstructor) && (
+            <Route exact path="/hobbies/:id/edit" component={HobbyForm} />
+          )}
+          <Route path="/hobbies/:id" component={SingleHobby} />
+          {isLoggedIn && <Route path="/profile" component={UserProfile} />}
+          {isLoggedIn &&
+            isAdmin && <Route path="/admin" component={AdminComponent} />}
         </Switch>
       </div>
     )
@@ -58,7 +58,8 @@ const mapState = state => {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
     isLoggedIn: !!state.user.id,
-    isAdmin: state.user.isAdmin
+    isAdmin: state.user.isAdmin,
+    isInstructor: state.user.isInstructor
   }
 }
 

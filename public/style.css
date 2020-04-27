@@ -39,6 +39,26 @@ form div {
   font-size: x-large;
   margin-right: 20px;
 }
+.formDiv {
+  display: flex;
+  justify-content: center;
+  padding-top: 35px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 550px;
+  width: 400px;
+}
+
+form > input {
+  margin-bottom: 10px;
+}
+
+form > select {
+  margin-bottom: 10px;
+}
 
 .shoppingCart {
   font-size: 25px;
