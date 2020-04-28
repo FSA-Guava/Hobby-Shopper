@@ -32,7 +32,7 @@ class Routes extends Component {
     const {isLoggedIn, isAdmin, isInstructor} = this.props
 
     return (
-      <div>
+      <div className="routesContainer">
         <Route path="/" component={Navbar} />
         <Switch>
           <Route path="/home" component={LandingPage} />

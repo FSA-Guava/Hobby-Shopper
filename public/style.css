@@ -9,6 +9,7 @@ body {
   /* background-repeat: repeat-x; */
 
   background: url(http://api.thumbr.it/whitenoise-361x370.png?background=ebeff0ff&noise=d4cdd4&density=19&opacity=21);
+  height: 100vh;
 }
 
 a {
@@ -294,12 +295,26 @@ a {
 .footer {
   background-color: #453f78;
   color: white;
-  display: flex;
-  justify-content: center;
-  flex-shrink: 0;
-  /* position: fixed; */
-  /* left: 0;
-  width: 100%;
+  /* width: 100%;
   text-align: center;
-  margin-top: 30px; */
+  margin-top: -30px;
+  height: 40px;
+  bottom: 0;
+  justify-self: end; */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.profilePage {
+  margin-top: 40px;
+}
+
+.routesContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

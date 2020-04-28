@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 export const UserHome = props => {
   const hobbies = props.user.activeOrder.hobbies
   return (
-    <div>
+    <div className="profilePage">
       <img src={props.user.imageUrl} />
       <h3>Welcome, {props.user.name}</h3>
       <h4>Profile</h4>
