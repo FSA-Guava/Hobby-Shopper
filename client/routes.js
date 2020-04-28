@@ -46,7 +46,8 @@ class Routes extends Component {
           )}
           <Route path="/hobbies/:id" component={SingleHobby} />
           {isLoggedIn && <Route path="/profile" component={UserProfile} />}
-          {(isLoggedIn && isAdmin) && <Route path="/admin" component={AdminComponent} />}
+          {isLoggedIn &&
+            isAdmin && <Route path="/admin" component={AdminComponent} />}
         </Switch>
       </div>
     )
