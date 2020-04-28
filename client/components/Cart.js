@@ -3,6 +3,20 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {removeItem, completeOrder, createOrder} from '../store/cart'
 
+const convertPrice = price => {
+  let comma = price > 0 ? ',' : ''
+  comma = price < 100 ? '0,' : comma
+  return (
+    String(price)
+      .slice(0, -2)
+      .replace('.', '') +
+    comma +
+    String(price)
+      .slice(-2)
+      .replace('.', '')
+  )
+}
+
 export class Cart extends React.Component {
   constructor() {
     super()
@@ -43,7 +57,7 @@ export class Cart extends React.Component {
                 <li key={hobby.id} className="cartItem">
                   <span>{hobby.name}:</span>
                   <div className="cartPrice">
-                    <span>${hobby.price}</span>
+                    <span>${convertPrice(hobby.price)}</span>
                     <button
                       type="submit"
                       onClick={() => this.removeFromCart(hobby)}
@@ -55,7 +69,7 @@ export class Cart extends React.Component {
               ))
             : null}
         </ul>
-        <h2> Total Price: ${user.activeOrder.totalPrice}</h2>
+        <h2> Total Price: ${convertPrice(user.activeOrder.totalPrice)}</h2>
         <h3 />
         <button
           type="button"

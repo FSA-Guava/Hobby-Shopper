@@ -175,12 +175,13 @@ router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
     // finding the active order based on userId
     const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId === 'guest' ? null : req.params.userId,
+        // userId: req.params.userId === 'guest' ? null : req.params.userId,
         isActive: true,
         id: req.body.id
       },
       include: [Hobby]
     })
+    console.log(req.body)
     // mapping through to find out if hobby already exists in user's past & active orders
     // if not, adds hobby relationship to database and reloads/returns the updated order
     const containsHobby = foundOrder.hobbies.filter(
@@ -207,7 +208,7 @@ router.put('/:userId/checkout', async (req, res, next) => {
   try {
     const foundOrder = await Order.findOne({
       where: {
-        userId: req.params.userId === 'guest' ? null : req.params.userId,
+        // userId: req.params.userId === 'guest' ? null : req.params.userId,
         isActive: true,
         id: req.body.id
       },
