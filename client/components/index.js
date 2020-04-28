@@ -14,3 +14,4 @@ export {default as Confirmation} from './Confirmation'
 // our admin component:
 export {default as AdminComponent} from './AdminComponent'
 export {default as HobbyForm} from './newHobbyform'
+export {default as LandingPage} from './LandingPage'
