@@ -9,7 +9,7 @@ const Navbar = props => {
   return (
     <div className="navBar-Main">
       <div className="navBar">
-        <span onClick={() => props.history.push('/')} className="siteName">
+        <span onClick={() => props.history.push('/home')} className="siteName">
           HS
         </span>
         <Link to="/hobbies" className="navLink">
