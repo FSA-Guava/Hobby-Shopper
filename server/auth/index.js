@@ -6,15 +6,6 @@ const Hobby = require('../db/models/hobby')
 router.post('/login', async (req, res, next) => {
   try {
     const user = await User.findOne({
-      attributes: [
-        'id',
-        'email',
-        'name',
-        'imageUrl',
-        'isInstructor',
-        'password',
-        'salt'
-      ],
       where: {email: req.body.email},
       include: {
         model: Order,
@@ -44,6 +35,9 @@ router.post('/login', async (req, res, next) => {
         if (err) {
           next(err)
         } else {
+          if (!user.isAdmin) {
+            delete user.isAdmin
+          }
           res.json(user)
         }
       })
@@ -64,6 +58,7 @@ router.post('/signup', async (req, res, next) => {
         isInstructor: req.body.isInstructor
       },
       {
+        attributes: ['id', 'name', 'email', 'isInstructor'],
         include: [Order]
       }
     )
@@ -115,6 +110,9 @@ router.get('/me', (req, res) => {
       isInstructor: req.user.isInstructor,
       email: req.user.email,
       imageUrl: req.user.imageUrl
+    }
+    if (req.user.isAdmin) {
+      parsedUser.isAdmin = req.user.isAdmin
     }
   }
 
