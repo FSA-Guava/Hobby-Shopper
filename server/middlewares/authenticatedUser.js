@@ -3,8 +3,7 @@ const authenticatedUser = (req, res, next) => {
   const currentUser = req.user
   if (currentUser && currentUser.isAdmin) {
     next()
-  }
-  if (req.params.userId && req.params.userId === currentUser.id) {
+  } else if (req.params.userId && req.params.userId === currentUser.id) {
     next()
   } else if (req.body.userId && req.body.userId === currentUser.id) {
     next()

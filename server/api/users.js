@@ -18,7 +18,7 @@ router.get('/', isAdmin, async (req, res, next) => {
 
 // security layer: admin authorization, authenticated user (when viewing themself)
 // Get single user
-router.get('/:userId', isAdmin, authUser, async (req, res, next) => {
+router.get('/:userId', authUser, async (req, res, next) => {
   try {
     const userById = await User.findByPk(req.params.userId, {
       attributes: ['id', 'name', 'imageUrl', 'email'],
@@ -40,27 +40,22 @@ router.get('/:userId', isAdmin, authUser, async (req, res, next) => {
 
 // security layer: admin authorization, authenticated user (when viewing their own hobbies)
 // Get all hobbies associated with user (by userId)
-router.get(
-  '/:userId/hobbies',
-  isAdmin,
-  isInstructorAuth,
-  async (req, res, next) => {
-    try {
-      const hobbies = await Hobby.findAll({
-        where: {
-          userId: req.params.userId
-        }
-      })
-      res.json(hobbies)
-    } catch (error) {
-      next(error)
-    }
+router.get('/:userId/hobbies', isInstructorAuth, async (req, res, next) => {
+  try {
+    const hobbies = await Hobby.findAll({
+      where: {
+        userId: req.params.userId
+      }
+    })
+    res.json(hobbies)
+  } catch (error) {
+    next(error)
   }
-)
+})
 
 // security layer: admin authorization, authenticated user (when updating their own account)
 // Update an existing user (according to ID)
-router.put('/:userId', isAdmin, authUser, async (req, res, next) => {
+router.put('/:userId', authUser, async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.userId)
 
@@ -93,7 +88,7 @@ router.post('/', isAdmin, async (req, res, next) => {
 
 // security layer: admin authorization, authenticated user (when deleting their own account)
 // Delete an existing user by id
-router.delete('/:userId', isAdmin, authUser, async (req, res, next) => {
+router.delete('/:userId', authUser, async (req, res, next) => {
   try {
     const deletedUser = await User.findOne({
       where: {

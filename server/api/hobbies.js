@@ -12,7 +12,8 @@ const hobbyBodyParse = body => {
     imageUrl: body.imageUrl,
     subject: body.subject,
     tags: body.tags,
-    openSeats: body.openSeats
+    openSeats: body.openSeats,
+    userId: body.userId
   }
 
   return hobbyObj
@@ -46,9 +47,9 @@ router.get('/:id', async (req, res, next) => {
 
 // security layer: admin authorization, instructor authorization (only if hobby belongs to them)
 // Update a particular Hobby by Id
-router.put('/:userId', isAdmin, isInstructorAuth, async (req, res, next) => {
+router.put('/:hobbyId', isInstructorAuth, async (req, res, next) => {
   try {
-    const hobby = await Hobby.findByPk(req.params.userId)
+    const hobby = await Hobby.findByPk(req.params.hobbyId)
 
     if (hobby) {
       const hobbyToEdit = hobbyBodyParse(req.body)
@@ -87,7 +88,7 @@ router.put('/:id/increase', async (req, res, next) => {
 })
 // security layer: admin authorization, instructor authorization (only if hobby belongs to them)
 // Create a new Hobby
-router.post('/', isAdmin, isInstructorAuth, async (req, res, next) => {
+router.post('/', isInstructorAuth, async (req, res, next) => {
   try {
     const hobbyToCreate = hobbyBodyParse(req.body)
     const newHobby = await Hobby.create(hobbyToCreate)
@@ -99,27 +100,22 @@ router.post('/', isAdmin, isInstructorAuth, async (req, res, next) => {
 
 // security layer: admin authoriztion, instructor authorization (only if hobby belongs to them)
 // Delete a hobby by id
-router.delete(
-  '/:hobbyId',
-  isAdmin,
-  isInstructorAuth,
-  async (req, res, next) => {
-    try {
-      const deletedHobby = await Hobby.findOne({
-        where: {
-          id: req.params.hobbyId
-        }
-      })
-      if (deletedHobby) {
-        await deletedHobby.destroy()
-        res.status(200).json(deletedHobby)
-      } else {
-        res.sendStatus(404)
+router.delete('/:hobbyId', isInstructorAuth, async (req, res, next) => {
+  try {
+    const deletedHobby = await Hobby.findOne({
+      where: {
+        id: req.params.hobbyId
       }
-    } catch (error) {
-      next(error)
+    })
+    if (deletedHobby) {
+      await deletedHobby.destroy()
+      res.status(200).json(deletedHobby)
+    } else {
+      res.sendStatus(404)
     }
+  } catch (error) {
+    next(error)
   }
-)
+})
 
 module.exports = router
