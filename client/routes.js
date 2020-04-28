@@ -13,7 +13,8 @@ import {
   Confirmation,
   Navbar,
   AdminComponent,
-  HobbyForm
+  HobbyForm,
+  LandingPage
 } from './components'
 
 import {me} from './store'
@@ -33,6 +34,7 @@ class Routes extends Component {
       <div>
         <Route path="/" component={Navbar} />
         <Switch>
+          <Route path="/home" component={LandingPage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/confirmation" component={Confirmation} />
@@ -46,7 +48,8 @@ class Routes extends Component {
           )}
           <Route path="/hobbies/:id" component={SingleHobby} />
           {isLoggedIn && <Route path="/profile" component={UserProfile} />}
-          {(isLoggedIn && isAdmin) && <Route path="/admin" component={AdminComponent} />}
+          {isLoggedIn &&
+            isAdmin && <Route path="/admin" component={AdminComponent} />}
         </Switch>
       </div>
     )
