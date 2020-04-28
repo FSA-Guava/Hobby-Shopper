@@ -51,10 +51,6 @@ export class HobbyForm extends Component {
       // this function will fill the form with hobby info
       this.getTheHobby(this.props.match.params.id)
     }
-    console.log(
-      'singleHobby on props from componentDidMount>>>',
-      this.props.singleHobby
-    )
   }
 
   async getTheHobby(id) {
