@@ -28,9 +28,15 @@ class LandingPage extends Component {
     const sampleHobbies = []
 
     if (this.props.hobbies) {
-      const randomOne = this.props.hobbies[1]
-      const randomTwo = this.props.hobbies[2]
-      const randomThree = this.props.hobbies[3]
+      const randomOne = this.props.hobbies[
+        getRandomInt(0, this.props.hobbies.length - 1)
+      ]
+      const randomTwo = this.props.hobbies[
+        getRandomInt(0, this.props.hobbies.length - 1)
+      ]
+      const randomThree = this.props.hobbies[
+        getRandomInt(0, this.props.hobbies.length - 1)
+      ]
       sampleHobbies.push(randomOne, randomTwo, randomThree)
 
       return sampleHobbies
@@ -43,7 +49,7 @@ class LandingPage extends Component {
     const sampleHobbies = this.randomDisplay()
     console.log('IS THIS SAMPLE HOBBIES>>>>', sampleHobbies)
     return (
-      <div>
+      <div className="landingPage">
         <div className="welcomePhotoContainer">
           <img
             src="https://www.newsinlevels.com/wp-content/uploads/2019/06/GettyImages-487764222-e1495825614959-800x453.jpg"
@@ -56,36 +62,53 @@ class LandingPage extends Component {
             <h4>"Hobby Shopper made my dreams come true!"</h4>
           </div>
         </div>
-        <p className="welcomeText">
-          Congratulations on taking the first step to a better you! We thrive on
-          connecting our talented instructors with people who are passionate
-          about learning new skills. Check out some of our courses below and add
-          classes to your cart to get started!
-        </p>
+        <div className="landingPageContent">
+          <h2>Become a part of our student body!</h2>
+          <p className="welcomeText">
+            Congratulations on taking the first step to a better you! We thrive
+            on connecting our talented instructors with people who are
+            passionate about learning new skills. Check out some of our courses
+            below and add classes to your cart to get started!
+          </p>
+          <img
+            src="https://lh3.googleusercontent.com/proxy/_ZI7vH4uRCFijeD1jfRk8Ir0uTT7AVO2p-JM84b_9-Ex1NjiyvjFairqtHOleP8Z0TJ833AcOUsRc4VpkE22saDNKFaSHaMdyaPKMb5jJbIYKCNOZRZ37sEL"
+            className="separator"
+          />
+          <h2>Join our team of instructors!</h2>
+          <p className="welcomeText">
+            Why sit on the sidelines, when you could be sharing your passion
+            with the world? At Hobby Shopper, we put you in the driver's seat so
+            you can create a legacy of excellence.
+          </p>
+          <img
+            src="https://lh3.googleusercontent.com/proxy/_ZI7vH4uRCFijeD1jfRk8Ir0uTT7AVO2p-JM84b_9-Ex1NjiyvjFairqtHOleP8Z0TJ833AcOUsRc4VpkE22saDNKFaSHaMdyaPKMb5jJbIYKCNOZRZ37sEL"
+            className="separator"
+          />
 
-        <div>
-          <h3 className="sampleHeading">Browse some of our courses:</h3>
-          <div className="sampleHobbies">
-            {sampleHobbies[0]
-              ? sampleHobbies.map(sample => {
-                  return (
-                    <div key={sample.id} className="sampleHobby">
-                      <Link
-                        to={`/hobbies/${sample.id}`}
-                        className="sampleHobby"
-                      >
-                        <img
-                          src={sample.imageUrl}
-                          className="sampleHobbyPhoto"
-                        />
-                        <h6>Course Name: {sample.name}</h6>
-                        <h6>Price: ${sample.price}</h6>
-                        <h6>Seats Available: {sample.openSeats}</h6>
-                      </Link>
-                    </div>
-                  )
-                })
-              : null}
+          <div className="sampleContainer">
+            <h2 className="sampleHeading">Browse some of our courses:</h2>
+            <div className="sampleHobbies">
+              {sampleHobbies[0]
+                ? sampleHobbies.map(sample => {
+                    return (
+                      <div key={sample.id} className="sampleHobby">
+                        <Link
+                          to={`/hobbies/${sample.id}`}
+                          className="sampleHobby"
+                        >
+                          <img
+                            src={sample.imageUrl}
+                            className="sampleHobbyPhoto"
+                          />
+                          <h6>Course Name: {sample.name}</h6>
+                          <h6>Price: ${sample.price}</h6>
+                          <h6>Seats Available: {sample.openSeats}</h6>
+                        </Link>
+                      </div>
+                    )
+                  })
+                : null}
+            </div>
           </div>
         </div>
       </div>
