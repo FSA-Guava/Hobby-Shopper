@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-
+import DashboardTable from './DashboardTable'
 // import thunks here:
 import {fetchUsers, fetchHobbies, fetchOrders} from '../store/admin'
 
@@ -38,9 +38,9 @@ export class AdminComponent extends Component {
         ? Object.keys(this.props[this.state.selected][0])
         : []
 
-    headers.unshift('Edit') //this is for addding a edit column
+    if (this.state.selected === 'hobbies') headers.unshift('Edit') //this is for addding a edit column
     return (
-      <div>
+      <div className="adminComponent">
         <ul className="menu">
           {menuProps.map(menuItem => {
             return (
@@ -50,47 +50,12 @@ export class AdminComponent extends Component {
             )
           })}
         </ul>
-        <table>
-          <thead>
-            <tr>
-              <th colSpan="3">
-                {this.state.selected[0].toUpperCase() +
-                  this.state.selected.slice(1)}
-              </th>
-            </tr>
-            <tr>
-              {headers.map((header, index) => {
-                return <th key={index}>{header}</th>
-              })}
-            </tr>
-          </thead>
-          <tbody>
-            {this.props[this.state.selected].map(category => {
-              console.log('THIS IS CATEGORY>>>>>>', category)
-              return (
-                <tr key={category.id}>
-                  <td
-                    className="editButton"
-                    onClick={() =>
-                      this.props.history.push(
-                        `/${this.state.selected}/${category.id}/edit`
-                      )
-                    }
-                  >
-                    <i className="fa fa-pencil-square-o" aria-hidden="true" />
-                  </td>
-                  {headers.slice(1).map(header => {
-                    if (typeof category[header] !== 'object') {
-                      return <td>{`${category[header]}`}</td>
-                    } else {
-                      return <td>{JSON.stringify(category[header])}</td>
-                    }
-                  })}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
+        <DashboardTable
+          elements={this.props[this.state.selected]}
+          history={this.props.history}
+          selected={this.state.selected}
+          headers={headers}
+        />
       </div>
     )
   }

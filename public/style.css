@@ -24,7 +24,6 @@ form div {
   display: inline-block;
 }
 
-
 .cartItem {
   display: flex;
   justify-content: space-between;
@@ -89,4 +88,19 @@ form > select {
 .shoppingCart {
   font-size: 25px;
   color: white;
+}
+
+.adminComponent {
+  display: flex;
+}
+
+.modelLinkId {
+  margin-right: 1px;
+}
+
+td {
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 5px;
 }
