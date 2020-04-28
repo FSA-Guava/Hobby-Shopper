@@ -26,7 +26,6 @@ nav a {
 }
 
 form div {
-  margin: 1em;
   display: inline-block;
 }
 
@@ -34,6 +33,12 @@ form div {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  align-items: center;
+}
+
+.cartItem:hover {
+  background-color: white;
+  padding-left: 15px;
 }
 
 .cartPrice {
@@ -43,12 +48,12 @@ form div {
 
 .cartPrice > span {
   margin-right: 20px;
+  padding-top: 12px;
 }
 
 .purchaseCode {
-  font-size: 44px;
-  color: hotpink;
-  text-decoration: underline;
+  color: #453f78;
+  font-weight: bold;
 }
 .adminMenu {
   padding-top: 50px;
@@ -70,6 +75,13 @@ form div {
   border-top: 0px;
 }
 
+.confirmationDiv {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28px;
+}
 .selectedMenu {
   background-color: lightskyblue;
 }
@@ -80,7 +92,6 @@ form div {
   background-color: black;
   color: white;
 }
-
 
 .dashboardTable {
   padding-top: 50px;
@@ -107,6 +118,17 @@ form div {
   z-index: 2;
 }
 
+.navLink:hover {
+  text-shadow: rgba(237, 238, 238, 0.226) 0px 0.35em 1.175em,
+    rgba(237, 238, 238, 0.212) 0px 0.175em 0.5em;
+  transform: translateY(-1.4px) scale(1.0001);
+}
+
+.cart {
+  padding: 45px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
 .navBar {
   display: flex;
   /* background-color: rgb(60, 57, 57); */
@@ -120,8 +142,24 @@ form div {
   min-width: 100px;
 }
 
+.orderSuccess {
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authForm {
+  display: flex;
+  justify-content: center;
+}
 .navLink {
   color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 15px;
+  transition: all 500ms;
 }
 
 .siteName {
@@ -133,12 +171,19 @@ form div {
   display: flex;
   justify-content: center;
   padding-top: 35px;
+  height: 500px;
 }
+.formDiv > form {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+
 form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 550px;
+  height: 330px;
   width: 400px;
 }
 
@@ -153,10 +198,6 @@ form > select {
 .shoppingCart {
   font-size: 25px;
   color: white;
-}
-
-.submitButton > button {
-  background-color: red;
 }
 
 .adminComponent {
@@ -205,6 +246,21 @@ table {
   border-collapse: collapse;
 }
 
+button {
+  background-color: #453f78;
+  color: white;
+  max-width: 100px;
+  min-width: 100px;
+  max-height: 35px;
+  min-height: 35px;
+  border-radius: 10px;
+  border: 0px;
+  transition: all 500ms;
+}
+
+button:hover {
+  opacity: 0.78;
+}
 
 .welcomePhoto {
   width: 100%;

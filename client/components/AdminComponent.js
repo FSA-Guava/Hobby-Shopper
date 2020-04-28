@@ -35,7 +35,10 @@ export class AdminComponent extends Component {
     )
     const headers =
       this.props[this.state.selected] && this.props[this.state.selected][0]
-        ? Object.keys(this.props[this.state.selected][0])
+        ? Object.keys(this.props[this.state.selected][0]).filter(
+            key =>
+              key !== 'imageUrl' && key !== 'createdAt' && key !== 'description'
+          )
         : []
 
     if (this.state.selected === 'hobbies') headers.unshift('Edit') //this is for addding a edit column

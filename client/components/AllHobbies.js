@@ -16,6 +16,20 @@ function checkBoughtHobbies(hobby, user) {
   }
 }
 
+const convertPrice = price => {
+  let comma = price > 0 ? '.' : ''
+  comma = price < 100 ? '0.' : comma
+  return (
+    String(price)
+      .slice(0, -2)
+      .replace('.', '') +
+    comma +
+    String(price)
+      .slice(-2)
+      .replace('.', '')
+  )
+}
+
 class AllHobbies extends React.Component {
   constructor() {
     super()
@@ -81,7 +95,9 @@ class AllHobbies extends React.Component {
                       </Link>
                     </div>
                     <Link to={`/hobbies/${hobby.id}`}>
-                      <h4 name={hobby.price}>Price: ${hobby.price}</h4>
+                      <h4 name={hobby.price}>
+                        Price: ${convertPrice(hobby.price)}
+                      </h4>
                     </Link>
 
                     {this.checkForBought(hobby) ? (

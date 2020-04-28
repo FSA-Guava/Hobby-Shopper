@@ -3,6 +3,8 @@ const authenticatedUser = (req, res, next) => {
   const currentUser = req.user
   if (currentUser && currentUser.isAdmin) {
     next()
+  } else if (req.params.userId && req.params.userId === 'guest') {
+    next()
   } else if (req.params.userId && req.params.userId === currentUser.id) {
     next()
   } else if (req.body.userId && req.body.userId === currentUser.id) {

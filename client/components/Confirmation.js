@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 const convertPrice = price => {
-  let comma = price > 0 ? ',' : ''
-  comma = price < 100 ? '0,' : comma
+  let comma = price > 0 ? '.' : ''
+  comma = price < 100 ? '0.' : comma
   return (
     String(price)
       .slice(0, -2)
@@ -26,7 +26,7 @@ class Confirmation extends React.Component {
 
     console.log(user)
     return (
-      <div>
+      <div className="confirmationDiv">
         {user.name ? (
           <div>
             <h3>{user.name}, Thank you for your purchase!</h3>

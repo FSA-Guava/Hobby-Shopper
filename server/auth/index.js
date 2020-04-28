@@ -35,10 +35,20 @@ router.post('/login', async (req, res, next) => {
         if (err) {
           next(err)
         } else {
-          if (!user.isAdmin) {
-            delete user.isAdmin
+          let parsedUser = {
+            id: req.user.id,
+            orders: req.user.orders,
+            name: req.user.name,
+            email: req.user.email,
+            imageUrl: req.user.imageUrl
           }
-          res.json(user)
+          if (req.user.isAdmin) {
+            parsedUser.isAdmin = req.user.isAdmin
+          }
+          if (req.user.isInstructor) {
+            parsedUser.isInstructor = req.user.isInstructor
+          }
+          res.json(parsedUser)
         }
       })
     }
@@ -58,7 +68,6 @@ router.post('/signup', async (req, res, next) => {
         isInstructor: req.body.isInstructor
       },
       {
-        attributes: ['id', 'name', 'email', 'isInstructor'],
         include: [Order]
       }
     )
@@ -74,7 +83,26 @@ router.post('/signup', async (req, res, next) => {
     await order.reload()
     await user.addOrder(order)
     await user.reload()
-    req.login(user, err => (err ? next(err) : res.json(user)))
+    req.login(user, err => {
+      if (err) {
+        next(err)
+      } else {
+        let parsedUser = {
+          id: req.user.id,
+          orders: req.user.orders,
+          name: req.user.name,
+          email: req.user.email,
+          imageUrl: req.user.imageUrl
+        }
+        if (req.user.isAdmin) {
+          parsedUser.isAdmin = req.user.isAdmin
+        }
+        if (req.user.isInstructor) {
+          parsedUser.isInstructor = req.user.isInstructor
+        }
+        res.json(parsedUser)
+      }
+    })
   } catch (err) {
     if (err.name === 'SequelizeUniqueConstraintError') {
       res.status(401).send('User already exists')
@@ -113,6 +141,9 @@ router.get('/me', (req, res) => {
     }
     if (req.user.isAdmin) {
       parsedUser.isAdmin = req.user.isAdmin
+    }
+    if (req.user.isInstructor) {
+      parsedUser.isInstructor = req.user.isInstructor
     }
   }
 

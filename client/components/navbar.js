@@ -9,7 +9,10 @@ const Navbar = props => {
   return (
     <div className="navBar-Main">
       <div className="navBar">
-        <span onClick={() => props.history.push('/home')} className="siteName">
+        <span
+          onClick={() => props.history.push('/')}
+          className="siteName navLink"
+        >
           HS
         </span>
         <Link to="/hobbies" className="navLink">
@@ -33,40 +36,30 @@ const Navbar = props => {
               </Link>
             </div>
           )}
-          <ul>
-            <Link to="/profile" className="navLink">
-              Profile
-            </Link>
-          </ul>
-          <ul>
-            <a href="/" onClick={handleClick} className="navLink">
-              Logout
-            </a>
-          </ul>
-          <ul>
-            <Link to="/cart" className="shoppingCart">
-              <i className="fas fa-shopping-cart" />
-            </Link>
-          </ul>
+          <Link to="/profile" className="navLink">
+            Profile
+          </Link>
+
+          <a href="/" onClick={handleClick} className="navLink">
+            Logout
+          </a>
+
+          <Link to="/cart" className="shoppingCart navLink">
+            <i className="fas fa-shopping-cart" />
+          </Link>
         </div>
       ) : (
         <div className="navBar">
           {/* The navbar will show these links before you log in */}
-          <ul>
-            <Link to="/login" className="navLink">
-              Login
-            </Link>
-          </ul>
-          <ul>
-            <Link to="/signup" className="navLink">
-              Sign Up
-            </Link>
-          </ul>
-          <ul>
-            <Link to="/cart" className="shoppingCart">
-              <i className="fas fa-shopping-cart" />
-            </Link>
-          </ul>
+          <Link to="/login" className="navLink">
+            Login
+          </Link>
+          <Link to="/signup" className="navLink">
+            Sign Up
+          </Link>
+          <Link to="/cart" className="shoppingCart navLink">
+            <i className="fas fa-shopping-cart" />
+          </Link>
         </div>
       )}
     </div>
