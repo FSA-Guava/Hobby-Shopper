@@ -5,6 +5,20 @@ import {Link} from 'react-router-dom'
 // Import the thunk here!
 import {fetchHobby, revisedHobby} from '../store/singleHobby'
 
+const convertPrice = price => {
+  let comma = price > 0 ? ',' : ''
+  comma = price < 100 ? '0,' : comma
+  return (
+    String(price)
+      .slice(0, -2)
+      .replace('.', '') +
+    comma +
+    String(price)
+      .slice(-2)
+      .replace('.', '')
+  )
+}
+
 export class SingleHobby extends React.Component {
   componentDidMount() {
     this.props.grabTheHobby()
@@ -19,7 +33,7 @@ export class SingleHobby extends React.Component {
         <img src={hobby.imageUrl} />
         <p>{hobby.description}</p>
         <ul>
-          <li>Cost: {hobby.price}</li>
+          <li>Cost: {convertPrice(hobby.price)}</li>
           <li>Hobby Category: {hobby.subject}</li>
           <li>Rating: {hobby.rating}</li>
           {!hobby.openSeats ? (

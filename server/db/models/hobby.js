@@ -17,7 +17,7 @@ const Hobby = db.define('hobby', {
     }
   },
   price: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.INTEGER,
     allowNull: false,
     validate: {
       min: 0
