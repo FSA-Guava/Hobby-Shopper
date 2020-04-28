@@ -54,12 +54,19 @@ const Hobby = db.define('hobby', {
     type: Sequelize.INTEGER,
     defaultValue: 20,
     validate: {
-      min: 5,
+      min: 0,
       max: 30
     }
   }
 })
 
+const setForDefault = hobby => {
+  if (!hobby.imageUrl.length) {
+    hobby.imageUrl = undefined
+  }
+}
+
+Hobby.beforeValidate(setForDefault)
 module.exports = Hobby
 
 // NOTE: Hobby model should have user/instructor added via association

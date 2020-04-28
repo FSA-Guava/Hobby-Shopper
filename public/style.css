@@ -24,6 +24,27 @@ form div {
   display: inline-block;
 }
 
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cartPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartPrice > span {
+  margin-right: 20px;
+}
+
+.purchaseCode {
+  font-size: 44px;
+  color: hotpink;
+  text-decoration: underline;
+}
+
 .navBar {
   display: flex;
   background-color: rgb(60, 57, 57);

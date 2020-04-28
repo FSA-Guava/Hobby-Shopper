@@ -4,7 +4,7 @@ import {fetchNewHobby} from '../store/hobbies'
 import {fetchHobby, revisedHobby, deleteHobby} from '../store/singleHobby'
 import axios from 'axios'
 
-const selectArr = new Array(25).fill(1)
+const selectArr = new Array(30).fill(1)
 
 export class HobbyForm extends Component {
   constructor() {
@@ -173,14 +173,11 @@ export class HobbyForm extends Component {
           >
             {selectArr.map((val, index) => {
               return (
-                <option key={index} value={index + 5}>
-                  {index + 5}
+                <option key={index} value={index + 1}>
+                  {index + 1}
                 </option>
               )
             })}
-            <option key={30} value={30}>
-              30
-            </option>
           </select>
           <br />
           <button type="submit">Submit</button>

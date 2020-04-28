@@ -63,6 +63,28 @@ router.put('/:userId', isAdmin, isInstructorAuth, async (req, res, next) => {
   }
 })
 
+router.put('/:id/decrease', async (req, res, next) => {
+  try {
+    let hobby = await Hobby.findByPk(req.params.id)
+    hobby.openSeats--
+    await hobby.save()
+    res.json(hobby)
+  } catch (error) {
+    next(error)
+  }
+})
+
+//security layer: admin authorizationn
+router.put('/:id/increase', async (req, res, next) => {
+  try {
+    let hobby = await Hobby.findByPk(req.params.id)
+    hobby.openSeats++
+    await hobby.save()
+    res.json(hobby)
+  } catch (error) {
+    next(error)
+  }
+})
 // security layer: admin authorization, instructor authorization (only if hobby belongs to them)
 // Create a new Hobby
 router.post('/', isAdmin, isInstructorAuth, async (req, res, next) => {

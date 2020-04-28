@@ -2,7 +2,6 @@ const router = require('express').Router()
 const User = require('../db/models/user')
 const Order = require('../db/models/order')
 const Hobby = require('../db/models/hobby')
-module.exports = router
 
 router.post('/login', async (req, res, next) => {
   try {
@@ -22,6 +21,9 @@ router.post('/login', async (req, res, next) => {
         include: Hobby
       }
     })
+    // const hobbies = req.session.activeOrder.hobbies
+    // await order.addHobbies(hobbies)
+    // await order.reload()
     if (!user) {
       console.log('No such user found:', req.body.email)
       res.status(401).send('Wrong username and/or password')
@@ -57,7 +59,7 @@ router.post('/signup', async (req, res, next) => {
       }
     )
     // waiting for session.order.hobbies to exist
-    // const hobbies = req.session.order.hobbies
+    // const hobbies = req.session.activeOrder.hobbies
     // await order.addHobbies(hobbies)
     // await order.reload()
     await user.addOrder(order)
@@ -79,17 +81,30 @@ router.post('/logout', (req, res) => {
 })
 
 router.get('/me', (req, res) => {
-  delete req.user.isAdmin
   console.log(req.user, 'req.user')
-  const parsedUser = {
-    id: req.user.id,
-    orders: req.user.orders,
-    name: req.user.name,
-    isInstructor: req.user.isInstructor,
-    email: req.user.email,
-    imageUrl: req.user.imageUrl
+
+  let user = {}
+  let parsedUser
+  if (!req.user) {
+    user.activeOrder = req.session.activeOrder
+    if (user.activeOrder.hobbies) {
+      console.log('hobbiesArray', user.activeOrder.hobbies)
+    } else {
+      user.activeOrder.hobbies = []
+    }
+  } else {
+    parsedUser = {
+      id: req.user.id,
+      orders: req.user.orders,
+      name: req.user.name,
+      isInstructor: req.user.isInstructor,
+      email: req.user.email,
+      imageUrl: req.user.imageUrl
+    }
   }
-  res.json(parsedUser)
+
+  res.json(parsedUser || user)
 })
 
 router.use('/google', require('./google'))
+module.exports = router
