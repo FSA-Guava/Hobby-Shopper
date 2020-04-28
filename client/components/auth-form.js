@@ -26,7 +26,7 @@ const AuthForm = props => {
               </label>
               <input name="password" type="password" />
             </div>
-            <div>
+            <div className="submitButton">
               <button type="submit">{displayName}</button>
             </div>
             {error && error.response && <div> {error.response.data} </div>}
@@ -61,7 +61,7 @@ const AuthForm = props => {
               </label>
               <input name="imageUrl" type="text" />
             </div>
-            <div>
+            <div className="submitButton">
               <button type="submit">{displayName}</button>
             </div>
             {error && error.response && <div> {error.response.data} </div>}
