@@ -41,10 +41,17 @@ export class AdminComponent extends Component {
     if (this.state.selected === 'hobbies') headers.unshift('Edit') //this is for addding a edit column
     return (
       <div className="adminComponent">
-        <ul className="menu">
+        <ul className="adminMenu">
+          <li id="adminMenuHeader">Models</li>
           {menuProps.map(menuItem => {
             return (
-              <li key={menuItem} onClick={() => this.selectProp(menuItem)}>
+              <li
+                key={menuItem}
+                className={
+                  this.state.selected === menuItem ? 'selectedMenu' : ''
+                }
+                onClick={() => this.selectProp(menuItem)}
+              >
                 {`${menuItem}`}
               </li>
             )
