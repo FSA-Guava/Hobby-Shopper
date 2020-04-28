@@ -14,7 +14,8 @@ import {
   Navbar,
   AdminComponent,
   HobbyForm,
-  LandingPage
+  LandingPage,
+  FooterComponent
 } from './components'
 
 import {me} from './store'
@@ -51,6 +52,10 @@ class Routes extends Component {
           {isLoggedIn &&
             isAdmin && <Route path="/admin" component={AdminComponent} />}
         </Switch>
+        <br />
+        <br />
+        <br />
+        <Route path="/" component={FooterComponent} />
       </div>
     )
   }

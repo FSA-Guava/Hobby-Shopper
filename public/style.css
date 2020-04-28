@@ -290,3 +290,16 @@ a {
   align-items: left;
   max-width: 400px;
 }
+
+.footer {
+  background-color: #453f78;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  /* position: fixed; */
+  /* left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px; */
+}
