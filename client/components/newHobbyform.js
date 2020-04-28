@@ -4,7 +4,21 @@ import {fetchNewHobby} from '../store/hobbies'
 import {fetchHobby, revisedHobby, deleteHobby} from '../store/singleHobby'
 import axios from 'axios'
 
-const selectArr = new Array(25).fill(1)
+const selectArr = new Array(30).fill(1)
+
+const convertPrice = price => {
+  let comma = price > 0 ? ',' : ''
+  comma = price < 100 ? '0,' : comma
+  return (
+    String(price)
+      .slice(0, -2)
+      .replace('.', '') +
+    comma +
+    String(price)
+      .slice(-2)
+      .replace('.', '')
+  )
+}
 
 export class HobbyForm extends Component {
   constructor() {
@@ -21,12 +35,14 @@ export class HobbyForm extends Component {
       },
       wasDeleted: false,
       wasUpdated: false,
-      wasCreated: false
+      wasCreated: false,
+      isEditing: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.getTheHobby = this.getTheHobby.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.toggleEditing = this.toggleEditing.bind(this)
   }
 
   componentDidMount() {
@@ -53,7 +69,22 @@ export class HobbyForm extends Component {
     }
   }
 
+  toCurrency(number) {
+    const formatter = new Intl.NumberFormat('sv-SE', {
+      style: 'decimal'
+    })
+
+    return formatter.format(number)
+  }
+
+  toggleEditing() {
+    this.setState({isEditing: !this.state.isEditing})
+  }
+
   handleChange(event) {
+    if (event.target.name === 'price') {
+      event.target.value = Number(event.target.value.replace(/[.,]/g, ''))
+    }
     const newState = {...this.state}
     newState.model[event.target.name] = event.target.value
     this.setState(newState)
@@ -134,12 +165,23 @@ export class HobbyForm extends Component {
             value={this.state.model.description}
           />
           <label htmlFor="price">Price: </label>
-          <input
-            onChange={this.handleChange}
-            name="price"
-            type="number"
-            value={this.state.model.price}
-          />
+          {this.state.isEditing ? (
+            <input
+              type="number"
+              name="price"
+              value={this.state.model.price}
+              onChange={this.handleChange}
+              onBlur={this.toggleEditing}
+            />
+          ) : (
+            <input
+              type="text"
+              name="price"
+              value={convertPrice(this.state.model.price)}
+              onFocus={this.toggleEditing.bind(this)}
+              readOnly
+            />
+          )}
           <label htmlFor="imageUrl">Cover Photo: </label>
           <input
             onChange={this.handleChange}
@@ -173,14 +215,11 @@ export class HobbyForm extends Component {
           >
             {selectArr.map((val, index) => {
               return (
-                <option key={index} value={index + 5}>
-                  {index + 5}
+                <option key={index} value={index + 1}>
+                  {index + 1}
                 </option>
               )
             })}
-            <option key={30} value={30}>
-              30
-            </option>
           </select>
           <br />
           <button type="submit">Submit</button>

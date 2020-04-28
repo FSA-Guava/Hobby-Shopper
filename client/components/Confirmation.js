@@ -2,6 +2,20 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
+const convertPrice = price => {
+  let comma = price > 0 ? ',' : ''
+  comma = price < 100 ? '0,' : comma
+  return (
+    String(price)
+      .slice(0, -2)
+      .replace('.', '') +
+    comma +
+    String(price)
+      .slice(-2)
+      .replace('.', '')
+  )
+}
+
 class Confirmation extends React.Component {
   render() {
     const {user, cart} = this.props
@@ -27,7 +41,7 @@ class Confirmation extends React.Component {
                   <li key={hobby.id}>{hobby.name}</li>
                 ))}
               </ol>
-              Total Price: ${last.totalPrice}
+              Total Price: ${convertPrice(last.totalPrice)}
             </div>
           </div>
         ) : (
@@ -44,7 +58,7 @@ class Confirmation extends React.Component {
                   <li key={hobby.id}>{hobby.name}</li>
                 ))}
               </ol>
-              Total Price: ${last.totalPrice}
+              Total Price: ${convertPrice(last.totalPrice)}
             </div>
           </div>
         )}

@@ -808,7 +808,7 @@ const hobbies = [
     name: 'HR Metrics',
     description:
       'curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet',
-    price: 3247.23,
+    price: 3247,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 30
@@ -817,7 +817,7 @@ const hobbies = [
     name: 'Dog Training',
     description:
       'vestibulum ante ipsum primis in faucibus orci luctus et ultrices',
-    price: 6075.43,
+    price: 6075,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Miscellaneous',
     openSeats: 15
@@ -826,7 +826,7 @@ const hobbies = [
     name: 'IKB',
     description:
       'rutrum nulla nunc purus phasellus in felis donec semper sapien a libero',
-    price: 7602.83,
+    price: 7602,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 28
@@ -835,7 +835,7 @@ const hobbies = [
     name: 'Research',
     description:
       'sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum',
-    price: 164.92,
+    price: 1640,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Technology',
     openSeats: 9
@@ -844,7 +844,7 @@ const hobbies = [
     name: 'Eye Treatments',
     description:
       'amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum',
-    price: 2261.81,
+    price: 2261,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Finance',
     openSeats: 25
@@ -853,7 +853,7 @@ const hobbies = [
     name: 'VFX Supervision',
     description:
       'in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus',
-    price: 3201.87,
+    price: 3201,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Basic Industries',
     openSeats: 29
@@ -862,7 +862,7 @@ const hobbies = [
     name: 'Emergency Services',
     description:
       'sagittis nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis',
-    price: 5727.27,
+    price: 5727,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Basic Industries',
     openSeats: 12
@@ -871,7 +871,7 @@ const hobbies = [
     name: 'Drafting Agreements',
     description:
       'donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien',
-    price: 7242.92,
+    price: 7242,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Technology',
     openSeats: 29
@@ -880,7 +880,7 @@ const hobbies = [
     name: 'Food &amp; Beverage',
     description:
       'sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo',
-    price: 4118.0,
+    price: 4110,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Capital Goods',
     openSeats: 13
@@ -889,7 +889,7 @@ const hobbies = [
     name: 'Internal Audit',
     description:
       'pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst',
-    price: 2866.04,
+    price: 2866,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Miscellaneous',
     openSeats: 13
@@ -898,7 +898,7 @@ const hobbies = [
     name: 'Full-life Cycle Recruiting',
     description:
       'justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget',
-    price: 9806.03,
+    price: 9806,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 27
@@ -907,7 +907,7 @@ const hobbies = [
     name: 'Farms',
     description:
       'convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas',
-    price: 2864.08,
+    price: 2864,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 29
@@ -916,7 +916,7 @@ const hobbies = [
     name: 'Numerical Simulation',
     description:
       'porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non',
-    price: 2773.23,
+    price: 2773,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 7
@@ -925,7 +925,7 @@ const hobbies = [
     name: 'Lifestyle',
     description:
       'hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie',
-    price: 3687.3,
+    price: 3680,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 13
@@ -934,7 +934,7 @@ const hobbies = [
     name: 'GPIB',
     description:
       'vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum',
-    price: 950.2,
+    price: 95,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 14
@@ -942,7 +942,7 @@ const hobbies = [
   {
     name: 'Group Work',
     description: 'mi integer ac neque duis bibendum morbi non quam nec',
-    price: 5685.37,
+    price: 5685,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Miscellaneous',
     openSeats: 14
@@ -951,7 +951,7 @@ const hobbies = [
     name: 'BPWin',
     description:
       'natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida',
-    price: 1959.79,
+    price: 1959,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'n/a',
     openSeats: 8
@@ -960,7 +960,7 @@ const hobbies = [
     name: 'PTP',
     description:
       'sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede',
-    price: 609.2,
+    price: 60,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 17
@@ -969,7 +969,7 @@ const hobbies = [
     name: 'Cisco UCS',
     description:
       'convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel lectus',
-    price: 1071.88,
+    price: 1071,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'n/a',
     openSeats: 26
@@ -978,7 +978,7 @@ const hobbies = [
     name: 'NGP',
     description:
       'tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in',
-    price: 5400.98,
+    price: 5400,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Technology',
     openSeats: 14
@@ -987,7 +987,7 @@ const hobbies = [
     name: 'International Business',
     description:
       'id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac',
-    price: 8756.68,
+    price: 8756,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Transportation',
     openSeats: 5
@@ -996,7 +996,7 @@ const hobbies = [
     name: 'Oracle VM',
     description:
       'dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante',
-    price: 9136.76,
+    price: 9136,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Energy',
     openSeats: 17
@@ -1005,7 +1005,7 @@ const hobbies = [
     name: 'PowerPoint',
     description:
       'amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales sed',
-    price: 2506.06,
+    price: 2506,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Consumer Non-Durables',
     openSeats: 9
@@ -1014,7 +1014,7 @@ const hobbies = [
     name: 'DG Sets',
     description:
       'pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna',
-    price: 2748.26,
+    price: 2748,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 5
@@ -1023,7 +1023,7 @@ const hobbies = [
     name: 'Slide Shows',
     description:
       'mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus',
-    price: 8711.0,
+    price: 8710,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Energy',
     openSeats: 22
@@ -1032,7 +1032,7 @@ const hobbies = [
     name: 'Corporate Law',
     description:
       'etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem',
-    price: 426.34,
+    price: 4260,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Public Utilities',
     openSeats: 10
@@ -1041,7 +1041,7 @@ const hobbies = [
     name: 'Kindergarten',
     description:
       'suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa',
-    price: 3706.46,
+    price: 3706,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Health Care',
     openSeats: 10
@@ -1050,7 +1050,7 @@ const hobbies = [
     name: 'FW',
     description:
       'hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut',
-    price: 5043.01,
+    price: 5043,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 30
@@ -1059,7 +1059,7 @@ const hobbies = [
     name: 'HTC',
     description:
       'orci luctus et ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin',
-    price: 6462.04,
+    price: 6462,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 19
@@ -1068,7 +1068,7 @@ const hobbies = [
     name: 'Canon DSLR',
     description:
       'pellentesque quisque porta volutpat erat quisque erat eros viverra eget',
-    price: 3287.71,
+    price: 3287,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Technology',
     openSeats: 17
@@ -1077,7 +1077,7 @@ const hobbies = [
     name: 'Virtual PC',
     description:
       'ligula vehicula consequat morbi a ipsum integer a nibh in quis',
-    price: 5360.45,
+    price: 5360,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 29
@@ -1086,7 +1086,7 @@ const hobbies = [
     name: 'Church Events',
     description:
       'ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
-    price: 6005.84,
+    price: 6005,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 12
@@ -1095,7 +1095,7 @@ const hobbies = [
     name: 'FMA',
     description:
       'nunc proin at turpis a pede posuere nonummy integer non velit donec diam',
-    price: 2044.69,
+    price: 2044,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 16
@@ -1104,7 +1104,7 @@ const hobbies = [
     name: 'ISO 27001',
     description:
       'nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et',
-    price: 7628.8,
+    price: 7620,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Consumer Services',
     openSeats: 19
@@ -1113,7 +1113,7 @@ const hobbies = [
     name: 'UK Employment Law',
     description:
       'odio consequat varius integer ac leo pellentesque ultrices mattis odio',
-    price: 6581.61,
+    price: 6581,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 5
@@ -1122,7 +1122,7 @@ const hobbies = [
     name: 'QuickBooks',
     description:
       'arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam',
-    price: 3927.12,
+    price: 3927,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 12
@@ -1131,7 +1131,7 @@ const hobbies = [
     name: 'Vector Illustration',
     description:
       'nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse',
-    price: 1452.64,
+    price: 1452,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 12
@@ -1140,7 +1140,7 @@ const hobbies = [
     name: 'OGC',
     description:
       'nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at',
-    price: 6289.5,
+    price: 6280,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Basic Industries',
     openSeats: 13
@@ -1149,7 +1149,7 @@ const hobbies = [
     name: 'Quantitative Finance',
     description:
       'sem praesent id massa id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi',
-    price: 2002.05,
+    price: 2002,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 13
@@ -1158,7 +1158,7 @@ const hobbies = [
     name: 'Generators',
     description:
       'sapien quis libero nullam sit amet turpis elementum ligula vehicula',
-    price: 2929.12,
+    price: 2929,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Finance',
     openSeats: 16
@@ -1167,7 +1167,7 @@ const hobbies = [
     name: 'Motivational Interviewing',
     description:
       'enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum',
-    price: 7793.57,
+    price: 7793,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Finance',
     openSeats: 11
@@ -1176,7 +1176,7 @@ const hobbies = [
     name: 'EPiServer',
     description:
       'dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac',
-    price: 5759.98,
+    price: 5759,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'n/a',
     openSeats: 18
@@ -1185,7 +1185,7 @@ const hobbies = [
     name: 'PPPoE',
     description:
       'lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu',
-    price: 1828.75,
+    price: 1828,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Health Care',
     openSeats: 30
@@ -1194,7 +1194,7 @@ const hobbies = [
     name: 'Drama',
     description:
       'eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum',
-    price: 4189.09,
+    price: 4189,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Finance',
     openSeats: 5
@@ -1203,7 +1203,7 @@ const hobbies = [
     name: 'RCRA',
     description:
       'vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum',
-    price: 4981.8,
+    price: 4980,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 10
@@ -1212,7 +1212,7 @@ const hobbies = [
     name: 'Federal Law Enforcement',
     description:
       'lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque',
-    price: 2065.76,
+    price: 2065,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 15
@@ -1221,7 +1221,7 @@ const hobbies = [
     name: 'HR Solutions',
     description:
       'primis in faucibus orci luctus et ultrices posuere cubilia curae',
-    price: 3856.68,
+    price: 3856,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 20
@@ -1230,7 +1230,7 @@ const hobbies = [
     name: 'Yacht Deliveries',
     description:
       'enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet',
-    price: 4628.71,
+    price: 4628,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 17
@@ -1239,7 +1239,7 @@ const hobbies = [
     name: 'Hyperion Reports',
     description:
       'vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta',
-    price: 2884.5,
+    price: 2880,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Technology',
     openSeats: 5
@@ -1248,7 +1248,7 @@ const hobbies = [
     name: 'Xilinx',
     description:
       'lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque',
-    price: 6282.47,
+    price: 6282,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 28
@@ -1257,7 +1257,7 @@ const hobbies = [
     name: 'TI DSPs',
     description:
       'nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris',
-    price: 6092.68,
+    price: 6092,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Miscellaneous',
     openSeats: 18
@@ -1266,7 +1266,7 @@ const hobbies = [
     name: 'Eye Treatments',
     description:
       'non velit donec diam neque vestibulum eget vulputate ut ultrices',
-    price: 5683.15,
+    price: 5683,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'n/a',
     openSeats: 16
@@ -1274,7 +1274,7 @@ const hobbies = [
   {
     name: 'Guided Reading',
     description: 'ipsum aliquam non mauris morbi non lectus aliquam sit amet',
-    price: 3688.86,
+    price: 3688,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Capital Goods',
     openSeats: 21
@@ -1283,7 +1283,7 @@ const hobbies = [
     name: 'QlikView',
     description:
       'vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam',
-    price: 6326.78,
+    price: 6326,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 14
@@ -1292,7 +1292,7 @@ const hobbies = [
     name: 'NMLS',
     description:
       'tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed',
-    price: 8739.1,
+    price: 8730,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Health Care',
     openSeats: 29
@@ -1301,7 +1301,7 @@ const hobbies = [
     name: 'Zope',
     description:
       'massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse',
-    price: 9908.69,
+    price: 9908,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Consumer Durables',
     openSeats: 21
@@ -1310,7 +1310,7 @@ const hobbies = [
     name: 'UL',
     description:
       'eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus',
-    price: 2211.45,
+    price: 2211,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 28
@@ -1319,7 +1319,7 @@ const hobbies = [
     name: 'Strategy',
     description:
       'turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante',
-    price: 6428.05,
+    price: 6428,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 18
@@ -1328,7 +1328,7 @@ const hobbies = [
     name: 'Mac OS X Server',
     description:
       'diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices',
-    price: 1834.62,
+    price: 1834,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 14
@@ -1337,7 +1337,7 @@ const hobbies = [
     name: 'Security Audits',
     description:
       'hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla',
-    price: 9904.9,
+    price: 9900,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Health Care',
     openSeats: 20
@@ -1346,7 +1346,7 @@ const hobbies = [
     name: 'FpML',
     description:
       'sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in',
-    price: 1087.38,
+    price: 1087,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 21
@@ -1355,7 +1355,7 @@ const hobbies = [
     name: 'Global Strategy',
     description:
       'ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id',
-    price: 295.23,
+    price: 2950,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'n/a',
     openSeats: 7
@@ -1364,7 +1364,7 @@ const hobbies = [
     name: 'ATG CSC',
     description:
       'mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula',
-    price: 9313.67,
+    price: 9313,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 23
@@ -1373,7 +1373,7 @@ const hobbies = [
     name: 'Xoops',
     description:
       'iaculis diam erat fermentum justo nec condimentum neque sapien placerat',
-    price: 9383.81,
+    price: 9383,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Health Care',
     openSeats: 13
@@ -1382,7 +1382,7 @@ const hobbies = [
     name: 'MS Integration Services',
     description:
       'sapien non mi integer ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus',
-    price: 2034.05,
+    price: 2034,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Public Utilities',
     openSeats: 19
@@ -1391,7 +1391,7 @@ const hobbies = [
     name: 'BTEQ',
     description:
       'eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci',
-    price: 3049.5,
+    price: 3040,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Transportation',
     openSeats: 24
@@ -1400,7 +1400,7 @@ const hobbies = [
     name: 'Observational Astronomy',
     description:
       'in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing',
-    price: 2655.64,
+    price: 2655,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 20
@@ -1409,7 +1409,7 @@ const hobbies = [
     name: 'Reverse Logistics',
     description:
       'nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue',
-    price: 510.91,
+    price: 5100,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 11
@@ -1418,7 +1418,7 @@ const hobbies = [
     name: 'Human Capital',
     description:
       'ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat',
-    price: 9609.95,
+    price: 9609,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Technology',
     openSeats: 23
@@ -1427,7 +1427,7 @@ const hobbies = [
     name: 'iPhone Application Development',
     description:
       'eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum',
-    price: 1877.53,
+    price: 1877,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 13
@@ -1435,7 +1435,7 @@ const hobbies = [
   {
     name: 'PPAPs',
     description: 'ac nulla sed vel enim sit amet nunc viverra dapibus',
-    price: 5518.05,
+    price: 5518,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Consumer Non-Durables',
     openSeats: 14
@@ -1444,7 +1444,7 @@ const hobbies = [
     name: 'MMIC',
     description:
       'aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra',
-    price: 6554.86,
+    price: 6554,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'n/a',
     openSeats: 10
@@ -1453,7 +1453,7 @@ const hobbies = [
     name: 'ICT Consultancy',
     description:
       'elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel',
-    price: 3152.58,
+    price: 3152,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Miscellaneous',
     openSeats: 8
@@ -1462,7 +1462,7 @@ const hobbies = [
     name: 'Snowmobile',
     description:
       'turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at',
-    price: 2793.69,
+    price: 2793,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Consumer Services',
     openSeats: 16
@@ -1471,7 +1471,7 @@ const hobbies = [
     name: 'Smoking Cessation',
     description:
       'lorem ipsum dolor sit amet consectetuer adipiscing elit proin risus praesent lectus',
-    price: 1535.89,
+    price: 1535,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 6
@@ -1480,7 +1480,7 @@ const hobbies = [
     name: 'Ultimate Frisbee',
     description:
       'eget vulputate ut ultrices vel augue vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia',
-    price: 4692.04,
+    price: 4692,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Health Care',
     openSeats: 30
@@ -1489,7 +1489,7 @@ const hobbies = [
     name: 'International Logistics',
     description:
       'lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque',
-    price: 6507.93,
+    price: 6507,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 24
@@ -1498,7 +1498,7 @@ const hobbies = [
     name: 'Food Safety',
     description:
       'id nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi',
-    price: 9064.13,
+    price: 9064,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 30
@@ -1507,7 +1507,7 @@ const hobbies = [
     name: 'Year-end Close',
     description:
       'tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique',
-    price: 2885.55,
+    price: 2885,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Technology',
     openSeats: 8
@@ -1516,7 +1516,7 @@ const hobbies = [
     name: 'HSE Management Systems',
     description:
       'metus vitae ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna',
-    price: 5772.87,
+    price: 5772,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'n/a',
     openSeats: 14
@@ -1525,7 +1525,7 @@ const hobbies = [
     name: 'LLC',
     description:
       'molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae',
-    price: 7242.52,
+    price: 7242,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 13
@@ -1534,7 +1534,7 @@ const hobbies = [
     name: 'JUNOS',
     description:
       'pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien non',
-    price: 6368.26,
+    price: 6368,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Consumer Durables',
     openSeats: 22
@@ -1543,7 +1543,7 @@ const hobbies = [
     name: 'Ruby on Rails',
     description:
       'duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit',
-    price: 1253.93,
+    price: 1253,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Miscellaneous',
     openSeats: 30
@@ -1552,7 +1552,7 @@ const hobbies = [
     name: 'QI',
     description:
       'donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id',
-    price: 1180.84,
+    price: 1180,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 9
@@ -1561,7 +1561,7 @@ const hobbies = [
     name: 'JRuby',
     description:
       'nisi nam ultrices libero non mattis pulvinar nulla pede ullamcorper augue a suscipit nulla',
-    price: 4629.2,
+    price: 4620,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Energy',
     openSeats: 12
@@ -1570,7 +1570,7 @@ const hobbies = [
     name: 'UHV',
     description:
       'erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla',
-    price: 608.86,
+    price: 6080,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Capital Goods',
     openSeats: 19
@@ -1579,7 +1579,7 @@ const hobbies = [
     name: 'Sports Management',
     description:
       'at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio',
-    price: 1571.15,
+    price: 1571,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Health Care',
     openSeats: 17
@@ -1588,7 +1588,7 @@ const hobbies = [
     name: 'Analytical Chemistry',
     description:
       'in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan',
-    price: 57.83,
+    price: 57,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Technology',
     openSeats: 18
@@ -1597,7 +1597,7 @@ const hobbies = [
     name: 'Social Media Outreach',
     description:
       'parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id massa id',
-    price: 6940.53,
+    price: 6940,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Technology',
     openSeats: 17
@@ -1606,7 +1606,7 @@ const hobbies = [
     name: 'Korean Culture',
     description:
       'nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa',
-    price: 9949.56,
+    price: 9949,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'n/a',
     openSeats: 17
@@ -1615,7 +1615,7 @@ const hobbies = [
     name: 'Nickel',
     description:
       'nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus',
-    price: 4251.86,
+    price: 4251,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Energy',
     openSeats: 15
@@ -1624,7 +1624,7 @@ const hobbies = [
     name: 'uClinux',
     description:
       'diam in magna bibendum imperdiet nullam orci pede venenatis non',
-    price: 1976.35,
+    price: 1976,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 22
@@ -1633,7 +1633,7 @@ const hobbies = [
     name: 'Document Management',
     description:
       'erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper',
-    price: 3332.09,
+    price: 3332,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Basic Industries',
     openSeats: 13
@@ -1642,7 +1642,7 @@ const hobbies = [
     name: 'ProSystem fx Engagement',
     description:
       'posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel',
-    price: 701.25,
+    price: 7010,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 19
@@ -1651,7 +1651,7 @@ const hobbies = [
     name: 'HMO',
     description:
       'ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem',
-    price: 491.48,
+    price: 4910,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Capital Goods',
     openSeats: 15
@@ -1659,7 +1659,7 @@ const hobbies = [
   {
     name: 'HSRP',
     description: 'erat curabitur gravida nisi at nibh in hac habitasse platea',
-    price: 8912.04,
+    price: 8912,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 24
@@ -1668,7 +1668,7 @@ const hobbies = [
     name: 'Ffmpeg',
     description:
       'potenti nullam porttitor lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus aliquam',
-    price: 8787.28,
+    price: 8787,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Capital Goods',
     openSeats: 8
@@ -1677,7 +1677,7 @@ const hobbies = [
     name: 'Published Author',
     description:
       'in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti',
-    price: 3560.8,
+    price: 3560,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Capital Goods',
     openSeats: 29
@@ -1686,7 +1686,7 @@ const hobbies = [
     name: 'NYSE',
     description:
       'eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus',
-    price: 2792.74,
+    price: 2792,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 22
@@ -1695,7 +1695,7 @@ const hobbies = [
     name: 'RNA',
     description:
       'ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et',
-    price: 3356.59,
+    price: 3356,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Consumer Durables',
     openSeats: 10
@@ -1704,7 +1704,7 @@ const hobbies = [
     name: 'PDM',
     description:
       'porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in',
-    price: 388.95,
+    price: 3880,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Health Care',
     openSeats: 28
@@ -1713,7 +1713,7 @@ const hobbies = [
     name: 'General Aviation',
     description:
       'morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus',
-    price: 2113.99,
+    price: 2113,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Capital Goods',
     openSeats: 29
@@ -1722,7 +1722,7 @@ const hobbies = [
     name: 'EEOC',
     description:
       'consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum',
-    price: 7597.22,
+    price: 7597,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Miscellaneous',
     openSeats: 16
@@ -1731,7 +1731,7 @@ const hobbies = [
     name: 'NSE',
     description:
       'euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at',
-    price: 5403.35,
+    price: 5403,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 7
@@ -1740,7 +1740,7 @@ const hobbies = [
     name: 'Aqualogic',
     description:
       'consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id',
-    price: 612.35,
+    price: 6120,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Consumer Services',
     openSeats: 11
@@ -1749,7 +1749,7 @@ const hobbies = [
     name: 'Project Portfolio Management',
     description:
       'nec nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla rhoncus',
-    price: 5304.77,
+    price: 5304,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Consumer Non-Durables',
     openSeats: 9
@@ -1758,7 +1758,7 @@ const hobbies = [
     name: 'Rolling Stock',
     description:
       'luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et',
-    price: 2180.47,
+    price: 2180,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 16
@@ -1767,7 +1767,7 @@ const hobbies = [
     name: 'Korean',
     description:
       'ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec pharetra magna',
-    price: 4377.55,
+    price: 4377,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Health Care',
     openSeats: 30
@@ -1776,7 +1776,7 @@ const hobbies = [
     name: 'Gas Turbines',
     description:
       'consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel',
-    price: 8876.88,
+    price: 8876,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 24
@@ -1785,7 +1785,7 @@ const hobbies = [
     name: 'CWSP',
     description:
       'quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi',
-    price: 5239.04,
+    price: 5239,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Public Utilities',
     openSeats: 7
@@ -1794,7 +1794,7 @@ const hobbies = [
     name: 'GCIA',
     description:
       'justo morbi ut odio cras mi pede malesuada in imperdiet et commodo',
-    price: 8467.75,
+    price: 8467,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Transportation',
     openSeats: 29
@@ -1803,7 +1803,7 @@ const hobbies = [
     name: 'OEM Management',
     description:
       'cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet',
-    price: 748.89,
+    price: 7480,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Energy',
     openSeats: 28
@@ -1812,7 +1812,7 @@ const hobbies = [
     name: 'HSI',
     description:
       'vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum',
-    price: 4197.4,
+    price: 4190,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 22
@@ -1821,7 +1821,7 @@ const hobbies = [
     name: 'ICH Guidelines',
     description:
       'vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo',
-    price: 2448.83,
+    price: 2448,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 17
@@ -1830,7 +1830,7 @@ const hobbies = [
     name: 'Geomatics',
     description:
       'magna bibendum imperdiet nullam orci pede venenatis non sodales sed tincidunt eu',
-    price: 9036.74,
+    price: 9036,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Miscellaneous',
     openSeats: 19
@@ -1839,7 +1839,7 @@ const hobbies = [
     name: 'FFA',
     description:
       'dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at',
-    price: 5985.48,
+    price: 5985,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 24
@@ -1848,7 +1848,7 @@ const hobbies = [
     name: 'Petrochemical',
     description:
       'magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien',
-    price: 8534.93,
+    price: 8534,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 26
@@ -1857,7 +1857,7 @@ const hobbies = [
     name: 'uDig',
     description:
       'facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit',
-    price: 5741.14,
+    price: 5741,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 11
@@ -1866,7 +1866,7 @@ const hobbies = [
     name: 'DH+',
     description:
       'quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum',
-    price: 1331.94,
+    price: 1331,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Finance',
     openSeats: 19
@@ -1875,7 +1875,7 @@ const hobbies = [
     name: 'SWIFT Payments',
     description:
       'id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla',
-    price: 3724.68,
+    price: 3724,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Public Utilities',
     openSeats: 11
@@ -1884,7 +1884,7 @@ const hobbies = [
     name: 'Zillow',
     description:
       'sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui',
-    price: 5870.32,
+    price: 5870,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Public Utilities',
     openSeats: 27
@@ -1892,7 +1892,7 @@ const hobbies = [
   {
     name: 'Ultrafiltration',
     description: 'eu massa donec dapibus duis at velit eu est congue elementum',
-    price: 2986.75,
+    price: 2986,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 11
@@ -1901,7 +1901,7 @@ const hobbies = [
     name: 'Architectural Drawings',
     description:
       'nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa',
-    price: 8090.64,
+    price: 8090,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'n/a',
     openSeats: 11
@@ -1910,7 +1910,7 @@ const hobbies = [
     name: 'MVNE',
     description:
       'vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
-    price: 3995.89,
+    price: 3995,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Consumer Services',
     openSeats: 16
@@ -1919,7 +1919,7 @@ const hobbies = [
     name: 'Business Journalism',
     description:
       'aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse',
-    price: 2841.55,
+    price: 2841,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Health Care',
     openSeats: 23
@@ -1928,7 +1928,7 @@ const hobbies = [
     name: 'Hydropower',
     description:
       'nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy',
-    price: 3726.61,
+    price: 3726,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 7
@@ -1937,7 +1937,7 @@ const hobbies = [
     name: 'FFT',
     description:
       'orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna',
-    price: 7216.92,
+    price: 7216,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Consumer Services',
     openSeats: 10
@@ -1946,7 +1946,7 @@ const hobbies = [
     name: 'Sound FX Editing',
     description:
       'leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque',
-    price: 7122.52,
+    price: 7122,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Transportation',
     openSeats: 28
@@ -1955,7 +1955,7 @@ const hobbies = [
     name: 'Awesomeness',
     description:
       'ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit',
-    price: 7914.27,
+    price: 7914,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Consumer Non-Durables',
     openSeats: 9
@@ -1964,7 +1964,7 @@ const hobbies = [
     name: 'Bonds',
     description:
       'pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut',
-    price: 9387.26,
+    price: 9387,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 19
@@ -1973,7 +1973,7 @@ const hobbies = [
     name: 'UltraTax',
     description:
       'lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur',
-    price: 5099.77,
+    price: 5099,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Energy',
     openSeats: 29
@@ -1982,7 +1982,7 @@ const hobbies = [
     name: 'Computer System Validation',
     description:
       'quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo',
-    price: 6737.08,
+    price: 6737,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 7
@@ -1991,7 +1991,7 @@ const hobbies = [
     name: 'HSP',
     description:
       'molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae',
-    price: 9318.17,
+    price: 9318,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 15
@@ -2000,7 +2000,7 @@ const hobbies = [
     name: 'OAuth',
     description:
       'nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero quis orci',
-    price: 5189.36,
+    price: 5189,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 13
@@ -2009,7 +2009,7 @@ const hobbies = [
     name: 'GPS',
     description:
       'ac leo pellentesque ultrices mattis odio donec vitae nisi nam ultrices libero non mattis pulvinar',
-    price: 6540.55,
+    price: 6540,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 5
@@ -2018,7 +2018,7 @@ const hobbies = [
     name: 'Quantitative Research',
     description:
       'porttitor lorem id ligula suspendisse ornare consequat lectus in est',
-    price: 7054.57,
+    price: 7054,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 27
@@ -2027,7 +2027,7 @@ const hobbies = [
     name: 'MYOB',
     description:
       'sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes',
-    price: 5500.62,
+    price: 5500,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Technology',
     openSeats: 16
@@ -2036,7 +2036,7 @@ const hobbies = [
     name: 'TMJ Dysfunction',
     description:
       'luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum',
-    price: 76.1,
+    price: 7,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Miscellaneous',
     openSeats: 10
@@ -2045,7 +2045,7 @@ const hobbies = [
     name: 'JScript',
     description:
       'pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean',
-    price: 9811.88,
+    price: 9811,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 11
@@ -2054,7 +2054,7 @@ const hobbies = [
     name: 'Ocean Freight',
     description:
       'et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti',
-    price: 101.44,
+    price: 1010,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Finance',
     openSeats: 29
@@ -2063,7 +2063,7 @@ const hobbies = [
     name: 'Joint Ventures',
     description:
       'luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus',
-    price: 4597.63,
+    price: 4597,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Consumer Non-Durables',
     openSeats: 16
@@ -2072,7 +2072,7 @@ const hobbies = [
     name: 'AMI',
     description:
       'fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue',
-    price: 5074.97,
+    price: 5074,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 8
@@ -2081,7 +2081,7 @@ const hobbies = [
     name: 'Psychopharmacology',
     description:
       'quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero',
-    price: 6481.25,
+    price: 6481,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Health Care',
     openSeats: 26
@@ -2090,7 +2090,7 @@ const hobbies = [
     name: 'Signal Processing',
     description:
       'elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus',
-    price: 2481.91,
+    price: 2481,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Health Care',
     openSeats: 20
@@ -2099,7 +2099,7 @@ const hobbies = [
     name: 'Zynx',
     description:
       'commodo placerat praesent blandit nam nulla integer pede justo lacinia eget',
-    price: 7812.4,
+    price: 7810,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 25
@@ -2108,7 +2108,7 @@ const hobbies = [
     name: 'RVM',
     description:
       'nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac',
-    price: 9544.21,
+    price: 9544,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Miscellaneous',
     openSeats: 18
@@ -2117,7 +2117,7 @@ const hobbies = [
     name: 'TL1',
     description:
       'eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus',
-    price: 626.61,
+    price: 6260,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Capital Goods',
     openSeats: 27
@@ -2126,7 +2126,7 @@ const hobbies = [
     name: 'Design for Manufacturing',
     description:
       'montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et',
-    price: 6849.43,
+    price: 6849,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 20
@@ -2135,7 +2135,7 @@ const hobbies = [
     name: 'Yield Management',
     description:
       'nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus',
-    price: 5003.58,
+    price: 5003,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 7
@@ -2144,7 +2144,7 @@ const hobbies = [
     name: 'Yachting',
     description:
       'nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris',
-    price: 2273.18,
+    price: 2273,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 12
@@ -2153,7 +2153,7 @@ const hobbies = [
     name: 'Aquatics',
     description:
       'venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis',
-    price: 6734.11,
+    price: 6734,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 12
@@ -2162,7 +2162,7 @@ const hobbies = [
     name: 'Httpd',
     description:
       'duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti',
-    price: 1044.48,
+    price: 1044,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Energy',
     openSeats: 29
@@ -2170,7 +2170,7 @@ const hobbies = [
   {
     name: 'Distribution Center Operations',
     description: 'non mauris morbi non lectus aliquam sit amet diam in',
-    price: 3596.45,
+    price: 3596,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Basic Industries',
     openSeats: 29
@@ -2179,7 +2179,7 @@ const hobbies = [
     name: 'Olefins',
     description:
       'fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer',
-    price: 7444.17,
+    price: 7444,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Transportation',
     openSeats: 11
@@ -2188,7 +2188,7 @@ const hobbies = [
     name: 'DFD',
     description:
       'platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut',
-    price: 3034.41,
+    price: 3034,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Health Care',
     openSeats: 29
@@ -2197,7 +2197,7 @@ const hobbies = [
     name: 'LLQP',
     description:
       'nam congue risus semper porta volutpat quam pede lobortis ligula sit amet eleifend pede libero',
-    price: 3509.03,
+    price: 3509,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 28
@@ -2206,7 +2206,7 @@ const hobbies = [
     name: 'Stage Make-up',
     description:
       'primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam vitae quam suspendisse',
-    price: 2259.85,
+    price: 2259,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 14
@@ -2215,7 +2215,7 @@ const hobbies = [
     name: 'Two-phase Flow',
     description:
       'vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin',
-    price: 6150.74,
+    price: 6150,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Basic Industries',
     openSeats: 25
@@ -2224,7 +2224,7 @@ const hobbies = [
     name: 'Vulcan',
     description:
       'aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula',
-    price: 8418.15,
+    price: 8418,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 25
@@ -2233,7 +2233,7 @@ const hobbies = [
     name: 'MPages',
     description:
       'sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue',
-    price: 8353.88,
+    price: 8353,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 22
@@ -2242,7 +2242,7 @@ const hobbies = [
     name: 'IEC 62304',
     description:
       'nulla elit ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit',
-    price: 6939.56,
+    price: 6939,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Consumer Services',
     openSeats: 6
@@ -2251,7 +2251,7 @@ const hobbies = [
     name: 'OS/400',
     description:
       'massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt',
-    price: 6344.98,
+    price: 6344,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Technology',
     openSeats: 5
@@ -2260,7 +2260,7 @@ const hobbies = [
     name: 'MPLS',
     description:
       'non sodales sed tincidunt eu felis fusce posuere felis sed lacus morbi sem',
-    price: 4212.8,
+    price: 4210,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 26
@@ -2269,7 +2269,7 @@ const hobbies = [
     name: 'KOL Development',
     description:
       'quam pede lobortis ligula sit amet eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at',
-    price: 2343.77,
+    price: 2343,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Consumer Durables',
     openSeats: 19
@@ -2278,7 +2278,7 @@ const hobbies = [
     name: 'PDCA',
     description:
       'felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar',
-    price: 8328.61,
+    price: 8328,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 27
@@ -2287,7 +2287,7 @@ const hobbies = [
     name: 'TDP',
     description:
       'consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus',
-    price: 642.7,
+    price: 64,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 19
@@ -2296,7 +2296,7 @@ const hobbies = [
     name: 'Video Editing',
     description:
       'varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et',
-    price: 1893.49,
+    price: 1893,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 24
@@ -2305,7 +2305,7 @@ const hobbies = [
     name: 'Google Adwords',
     description:
       'bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa',
-    price: 3401.85,
+    price: 3401,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Consumer Non-Durables',
     openSeats: 27
@@ -2314,7 +2314,7 @@ const hobbies = [
     name: 'JTIDS',
     description:
       'ultrices posuere cubilia curae donec pharetra magna vestibulum aliquet ultrices erat tortor sollicitudin mi sit amet lobortis sapien sapien',
-    price: 9854.94,
+    price: 9854,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Public Utilities',
     openSeats: 28
@@ -2323,7 +2323,7 @@ const hobbies = [
     name: 'ISO 22000',
     description:
       'eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis',
-    price: 2620.99,
+    price: 2620,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 7
@@ -2332,7 +2332,7 @@ const hobbies = [
     name: 'Glaucoma',
     description:
       'eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum',
-    price: 7236.59,
+    price: 7236,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 9
@@ -2341,7 +2341,7 @@ const hobbies = [
     name: 'RCS Master Control',
     description:
       'nulla tempus vivamus in felis eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec',
-    price: 9047.18,
+    price: 9047,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 6
@@ -2350,7 +2350,7 @@ const hobbies = [
     name: 'EIGRP',
     description:
       'at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna',
-    price: 2987.93,
+    price: 2987,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 8
@@ -2359,7 +2359,7 @@ const hobbies = [
     name: 'CWSP',
     description:
       'vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor',
-    price: 7927.29,
+    price: 7927,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Energy',
     openSeats: 12
@@ -2367,7 +2367,7 @@ const hobbies = [
   {
     name: 'CNC',
     description: 'at turpis a pede posuere nonummy integer non velit donec',
-    price: 533.84,
+    price: 5330,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 20
@@ -2376,7 +2376,7 @@ const hobbies = [
     name: 'Ninja Skills',
     description:
       'duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu',
-    price: 7074.77,
+    price: 7074,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 11
@@ -2385,7 +2385,7 @@ const hobbies = [
     name: 'Systems Design',
     description:
       'at ipsum ac tellus semper interdum mauris ullamcorper purus sit',
-    price: 7931.75,
+    price: 7931,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Basic Industries',
     openSeats: 16
@@ -2394,7 +2394,7 @@ const hobbies = [
     name: 'Easements',
     description:
       'tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis',
-    price: 9523.47,
+    price: 9523,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 17
@@ -2403,7 +2403,7 @@ const hobbies = [
     name: 'RSVP-TE',
     description:
       'congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus',
-    price: 3374.07,
+    price: 3374,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 8
@@ -2412,7 +2412,7 @@ const hobbies = [
     name: 'NIST',
     description:
       'dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis',
-    price: 4371.76,
+    price: 4371,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Miscellaneous',
     openSeats: 19
@@ -2421,7 +2421,7 @@ const hobbies = [
     name: 'NSS',
     description:
       'est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum',
-    price: 1049.52,
+    price: 1049,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Technology',
     openSeats: 30
@@ -2430,7 +2430,7 @@ const hobbies = [
     name: 'Classical',
     description:
       'etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius',
-    price: 1276.92,
+    price: 1276,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Miscellaneous',
     openSeats: 15
@@ -2439,7 +2439,7 @@ const hobbies = [
     name: 'Following Up',
     description:
       'platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate',
-    price: 3574.38,
+    price: 3574,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Basic Industries',
     openSeats: 20
@@ -2448,7 +2448,7 @@ const hobbies = [
     name: 'eWFM',
     description:
       'justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris',
-    price: 6944.64,
+    price: 6944,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Capital Goods',
     openSeats: 6
@@ -2457,7 +2457,7 @@ const hobbies = [
     name: 'CBRN',
     description:
       'dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque',
-    price: 8334.59,
+    price: 8334,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Basic Industries',
     openSeats: 17
@@ -2466,7 +2466,7 @@ const hobbies = [
     name: 'Music Theory',
     description:
       'in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu',
-    price: 3044.04,
+    price: 3044,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 7
@@ -2475,7 +2475,7 @@ const hobbies = [
     name: 'xPression',
     description:
       'ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit',
-    price: 2086.2,
+    price: 2080,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 29
@@ -2484,7 +2484,7 @@ const hobbies = [
     name: 'Oleochemicals',
     description:
       'accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus',
-    price: 962.54,
+    price: 9620,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 21
@@ -2493,7 +2493,7 @@ const hobbies = [
     name: 'Job Costing',
     description:
       'praesent blandit lacinia erat vestibulum sed magna at nunc commodo',
-    price: 1898.51,
+    price: 1898,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Public Utilities',
     openSeats: 11
@@ -2502,7 +2502,7 @@ const hobbies = [
     name: 'Unfair Competition',
     description:
       'vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus',
-    price: 4981.29,
+    price: 4981,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 26
@@ -2511,7 +2511,7 @@ const hobbies = [
     name: 'Teaching Writing',
     description:
       'eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa quis augue',
-    price: 2008.9,
+    price: 2000,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Consumer Non-Durables',
     openSeats: 21
@@ -2520,7 +2520,7 @@ const hobbies = [
     name: 'First Time Home Buyers',
     description:
       'quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum',
-    price: 1249.36,
+    price: 1249,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'n/a',
     openSeats: 28
@@ -2529,7 +2529,7 @@ const hobbies = [
     name: 'Sales Operations',
     description:
       'sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium',
-    price: 4763.22,
+    price: 4763,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Health Care',
     openSeats: 26
@@ -2538,7 +2538,7 @@ const hobbies = [
     name: 'Broadcast Television',
     description:
       'nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium',
-    price: 5058.3,
+    price: 5050,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Technology',
     openSeats: 25
@@ -2547,7 +2547,7 @@ const hobbies = [
     name: 'RCT',
     description:
       'ac nulla sed vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum',
-    price: 4690.29,
+    price: 4690,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Finance',
     openSeats: 17
@@ -2556,7 +2556,7 @@ const hobbies = [
     name: 'Power Generation',
     description:
       'quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst',
-    price: 6657.75,
+    price: 6657,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Energy',
     openSeats: 30
@@ -2565,7 +2565,7 @@ const hobbies = [
     name: 'ICT',
     description:
       'mattis pulvinar nulla pede ullamcorper augue a suscipit nulla elit ac nulla sed vel enim',
-    price: 4276.33,
+    price: 4276,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Health Care',
     openSeats: 21
@@ -2574,7 +2574,7 @@ const hobbies = [
     name: 'Logic Pro',
     description:
       'cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc',
-    price: 5333.09,
+    price: 5333,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'n/a',
     openSeats: 16
@@ -2583,7 +2583,7 @@ const hobbies = [
     name: 'NBFC',
     description:
       'lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc rhoncus dui',
-    price: 3661.32,
+    price: 3661,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Basic Industries',
     openSeats: 13
@@ -2592,7 +2592,7 @@ const hobbies = [
     name: 'Aerial Lifts',
     description:
       'nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros',
-    price: 4344.35,
+    price: 4344,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 6
@@ -2601,7 +2601,7 @@ const hobbies = [
     name: 'IBM Tivoli',
     description:
       'pede posuere nonummy integer non velit donec diam neque vestibulum eget',
-    price: 7742.38,
+    price: 7742,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'n/a',
     openSeats: 9
@@ -2610,7 +2610,7 @@ const hobbies = [
     name: 'MRB',
     description:
       'platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat',
-    price: 694.35,
+    price: 6940,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Technology',
     openSeats: 24
@@ -2619,7 +2619,7 @@ const hobbies = [
     name: 'SAP ERP',
     description:
       'vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc',
-    price: 8619.06,
+    price: 8619,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Health Care',
     openSeats: 17
@@ -2628,7 +2628,7 @@ const hobbies = [
     name: 'DNA quantification',
     description:
       'ipsum dolor sit amet consectetuer adipiscing elit proin risus praesent lectus vestibulum',
-    price: 9157.54,
+    price: 9157,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Public Utilities',
     openSeats: 15
@@ -2637,7 +2637,7 @@ const hobbies = [
     name: 'E-on Vue',
     description:
       'nisl venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo',
-    price: 8436.63,
+    price: 8436,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Miscellaneous',
     openSeats: 12
@@ -2646,7 +2646,7 @@ const hobbies = [
     name: 'On Location',
     description:
       'tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh',
-    price: 4378.9,
+    price: 4370,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Basic Industries',
     openSeats: 5
@@ -2654,7 +2654,7 @@ const hobbies = [
   {
     name: 'Driven By Results',
     description: 'duis aliquam convallis nunc proin at turpis a pede posuere',
-    price: 8979.69,
+    price: 8979,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 7
@@ -2663,7 +2663,7 @@ const hobbies = [
     name: 'ICH Guidelines',
     description:
       'sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non sodales',
-    price: 8768.5,
+    price: 8760,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Public Utilities',
     openSeats: 12
@@ -2672,7 +2672,7 @@ const hobbies = [
     name: 'Requirements Gathering',
     description:
       'aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus',
-    price: 3457.66,
+    price: 3457,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 7
@@ -2681,7 +2681,7 @@ const hobbies = [
     name: 'Hybrid Cloud',
     description:
       'congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam',
-    price: 8544.37,
+    price: 8544,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Consumer Services',
     openSeats: 26
@@ -2690,7 +2690,7 @@ const hobbies = [
     name: 'JScript',
     description:
       'tincidunt eu felis fusce posuere felis sed lacus morbi sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc',
-    price: 7607.05,
+    price: 7607,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 23
@@ -2699,7 +2699,7 @@ const hobbies = [
     name: 'Emergency Management',
     description:
       'fringilla rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet',
-    price: 6513.03,
+    price: 6513,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 9
@@ -2708,7 +2708,7 @@ const hobbies = [
     name: 'Non-profit Volunteering',
     description:
       'sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam',
-    price: 660.37,
+    price: 6600,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Public Utilities',
     openSeats: 14
@@ -2716,7 +2716,7 @@ const hobbies = [
   {
     name: 'Pinterest',
     description: 'sapien cursus vestibulum proin eu mi nulla ac enim in tempor',
-    price: 417.79,
+    price: 4170,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Capital Goods',
     openSeats: 17
@@ -2725,7 +2725,7 @@ const hobbies = [
     name: 'PVC',
     description:
       'convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla',
-    price: 9451.67,
+    price: 9451,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'n/a',
     openSeats: 21
@@ -2734,7 +2734,7 @@ const hobbies = [
     name: 'eBusiness Suite',
     description:
       'nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat',
-    price: 2748.88,
+    price: 2748,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 25
@@ -2743,7 +2743,7 @@ const hobbies = [
     name: 'Iyengar Yoga',
     description:
       'suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet',
-    price: 7012.77,
+    price: 7012,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 8
@@ -2752,7 +2752,7 @@ const hobbies = [
     name: 'PDS Frameworks',
     description:
       'a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien',
-    price: 3745.92,
+    price: 3745,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 6
@@ -2761,7 +2761,7 @@ const hobbies = [
     name: 'Molecular Biology',
     description:
       'condimentum curabitur in libero ut massa volutpat convallis morbi odio odio',
-    price: 4320.56,
+    price: 4320,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Basic Industries',
     openSeats: 14
@@ -2769,7 +2769,7 @@ const hobbies = [
   {
     name: 'Xplan',
     description: 'mauris enim leo rhoncus sed vestibulum sit amet cursus id',
-    price: 3473.36,
+    price: 3473,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Consumer Services',
     openSeats: 27
@@ -2778,7 +2778,7 @@ const hobbies = [
     name: 'JES2',
     description:
       'maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc',
-    price: 7932.32,
+    price: 7932,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 28
@@ -2787,7 +2787,7 @@ const hobbies = [
     name: 'LDS',
     description:
       'rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus',
-    price: 6290.58,
+    price: 6290,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 23
@@ -2795,7 +2795,7 @@ const hobbies = [
   {
     name: 'IUI',
     description: 'ac nibh fusce lacus purus aliquet at feugiat non pretium',
-    price: 5117.71,
+    price: 5117,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Miscellaneous',
     openSeats: 19
@@ -2804,7 +2804,7 @@ const hobbies = [
     name: 'What-if Analysis',
     description:
       'magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus',
-    price: 136.56,
+    price: 1360,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Finance',
     openSeats: 18
@@ -2813,7 +2813,7 @@ const hobbies = [
     name: 'SFTP',
     description:
       'in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo',
-    price: 5187.76,
+    price: 5187,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 12
@@ -2822,7 +2822,7 @@ const hobbies = [
     name: 'Pygame',
     description:
       'luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo',
-    price: 3941.06,
+    price: 3941,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Consumer Services',
     openSeats: 24
@@ -2831,7 +2831,7 @@ const hobbies = [
     name: 'OTL',
     description:
       'enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est',
-    price: 7059.53,
+    price: 7059,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Consumer Services',
     openSeats: 21
@@ -2840,7 +2840,7 @@ const hobbies = [
     name: 'US Tax',
     description:
       'mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem',
-    price: 1745.78,
+    price: 1745,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Energy',
     openSeats: 22
@@ -2849,7 +2849,7 @@ const hobbies = [
     name: 'Umbraco',
     description:
       'pede lobortis ligula sit amet eleifend pede libero quis orci nullam',
-    price: 3374.25,
+    price: 3374,
     imageUrl: 'http://dummyimage.com/100x100.jpg/dddddd/000000',
     subject: 'Finance',
     openSeats: 27
@@ -2858,7 +2858,7 @@ const hobbies = [
     name: 'Boilers',
     description:
       'interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac lobortis vel dapibus at diam nam tristique',
-    price: 472.17,
+    price: 4720,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Health Care',
     openSeats: 29
@@ -2867,7 +2867,7 @@ const hobbies = [
     name: 'NYISO',
     description:
       'amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus',
-    price: 9872.22,
+    price: 9872,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Finance',
     openSeats: 25
@@ -2876,7 +2876,7 @@ const hobbies = [
     name: 'Kickstart',
     description:
       'magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia',
-    price: 3029.48,
+    price: 3029,
     imageUrl: 'http://dummyimage.com/100x100.jpg/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 16
@@ -2885,7 +2885,7 @@ const hobbies = [
     name: 'MQL4',
     description:
       'felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis',
-    price: 4360.92,
+    price: 4360,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Consumer Services',
     openSeats: 17
@@ -2894,7 +2894,7 @@ const hobbies = [
     name: 'EBITDA Growth',
     description:
       'vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis',
-    price: 3195.8,
+    price: 3190,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Health Care',
     openSeats: 20
@@ -2903,7 +2903,7 @@ const hobbies = [
     name: 'Ext JS',
     description:
       'nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus',
-    price: 4532.77,
+    price: 4532,
     imageUrl: 'http://dummyimage.com/100x100.png/ff4444/ffffff',
     subject: 'Technology',
     openSeats: 20
@@ -2912,7 +2912,7 @@ const hobbies = [
     name: 'Klout',
     description:
       'posuere cubilia curae mauris viverra diam vitae quam suspendisse potenti nullam porttitor lacus',
-    price: 312.49,
+    price: 3120,
     imageUrl: 'http://dummyimage.com/100x100.png/5fa2dd/ffffff',
     subject: 'Consumer Non-Durables',
     openSeats: 28
@@ -2921,7 +2921,7 @@ const hobbies = [
     name: 'Alternative Medicine',
     description:
       'urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium',
-    price: 5039.32,
+    price: 5039,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Consumer Services',
     openSeats: 6
@@ -2930,7 +2930,7 @@ const hobbies = [
     name: 'FCNSA',
     description:
       'tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla',
-    price: 3198.17,
+    price: 3198,
     imageUrl: 'http://dummyimage.com/100x100.jpg/5fa2dd/ffffff',
     subject: 'Finance',
     openSeats: 14
@@ -2939,7 +2939,7 @@ const hobbies = [
     name: 'International Law',
     description:
       'cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam',
-    price: 6052.33,
+    price: 6052,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 27
@@ -2948,7 +2948,7 @@ const hobbies = [
     name: 'PGA',
     description:
       'aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero',
-    price: 3903.58,
+    price: 3903,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'n/a',
     openSeats: 27
@@ -2957,7 +2957,7 @@ const hobbies = [
     name: 'BSF',
     description:
       'consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam',
-    price: 7368.1,
+    price: 7360,
     imageUrl: 'http://dummyimage.com/100x100.png/dddddd/000000',
     subject: 'Consumer Non-Durables',
     openSeats: 29
@@ -2966,7 +2966,7 @@ const hobbies = [
     name: 'Unfair Competition',
     description:
       'vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in',
-    price: 2817.72,
+    price: 2817,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'n/a',
     openSeats: 25
@@ -2975,7 +2975,7 @@ const hobbies = [
     name: 'LPIC',
     description:
       'rutrum rutrum neque aenean auctor gravida sem praesent id massa',
-    price: 1133.26,
+    price: 1133,
     imageUrl: 'http://dummyimage.com/100x100.bmp/cc0000/ffffff',
     subject: 'Transportation',
     openSeats: 30
@@ -2984,7 +2984,7 @@ const hobbies = [
     name: 'CDMA2000',
     description:
       'montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et',
-    price: 8797.38,
+    price: 8797,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'n/a',
     openSeats: 16
@@ -2993,7 +2993,7 @@ const hobbies = [
     name: 'Multi-channel Retail',
     description:
       'magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis',
-    price: 8480.37,
+    price: 8480,
     imageUrl: 'http://dummyimage.com/100x100.bmp/dddddd/000000',
     subject: 'Finance',
     openSeats: 7
@@ -3002,7 +3002,7 @@ const hobbies = [
     name: 'Continuous Improvement',
     description:
       'nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra diam',
-    price: 2790.96,
+    price: 2790,
     imageUrl: 'http://dummyimage.com/100x100.jpg/cc0000/ffffff',
     subject: 'Consumer Services',
     openSeats: 22
@@ -3011,7 +3011,7 @@ const hobbies = [
     name: 'Electric Power',
     description:
       'aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget',
-    price: 1310.74,
+    price: 1310,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Finance',
     openSeats: 5
@@ -3020,7 +3020,7 @@ const hobbies = [
     name: 'Video Production',
     description:
       'lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien',
-    price: 9768.88,
+    price: 9768,
     imageUrl: 'http://dummyimage.com/100x100.bmp/ff4444/ffffff',
     subject: 'Energy',
     openSeats: 22
@@ -3029,7 +3029,7 @@ const hobbies = [
     name: 'Visual Merchandising',
     description:
       'vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci',
-    price: 146.05,
+    price: 1460,
     imageUrl: 'http://dummyimage.com/100x100.bmp/5fa2dd/ffffff',
     subject: 'Technology',
     openSeats: 27
@@ -3038,7 +3038,7 @@ const hobbies = [
     name: 'Food &amp; Beverage',
     description:
       'ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci',
-    price: 8178.82,
+    price: 8178,
     imageUrl: 'http://dummyimage.com/100x100.png/cc0000/ffffff',
     subject: 'Public Utilities',
     openSeats: 18

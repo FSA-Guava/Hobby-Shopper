@@ -91,7 +91,12 @@ const setSaltAndPassword = user => {
     user.password = User.encryptPassword(user.password(), user.salt())
   }
 }
-
+const setForDefault = user => {
+  if (!user.imageUrl.length) {
+    user.imageUrl = undefined
+  }
+}
+User.beforeValidate(setForDefault)
 User.beforeCreate(setSaltAndPassword)
 User.beforeUpdate(setSaltAndPassword)
 User.beforeBulkCreate(users => {
