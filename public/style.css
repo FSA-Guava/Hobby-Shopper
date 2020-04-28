@@ -50,6 +50,47 @@ form div {
   color: hotpink;
   text-decoration: underline;
 }
+.adminMenu {
+  padding-top: 50px;
+  margin-right: 80px;
+  width: 200px;
+}
+
+.adminMenu li:hover {
+  background-color: lightgray;
+}
+.adminMenu li {
+  width: 200px;
+  text-align: start;
+  padding-left: 15px;
+  padding-top: 15px;
+  list-style: none;
+  height: 28px;
+  border: 0.3px solid grey;
+  border-top: 0px;
+}
+
+.selectedMenu {
+  background-color: lightskyblue;
+}
+
+#adminMenuHeader {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  background-color: black;
+  color: white;
+}
+
+
+.dashboardTable {
+  padding-top: 50px;
+}
+
+.dashboardTable > h1 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-bottom: 25px;
+}
 
 .navBar-Main {
   box-shadow: 0px 10px 12px 0px rgb(0, 0, 0);
@@ -117,6 +158,54 @@ form > select {
 .submitButton > button {
   background-color: red;
 }
+
+.adminComponent {
+  display: flex;
+}
+
+.modelLinkId {
+  margin-right: 1px;
+}
+
+td {
+  height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0.2px solid;
+  text-align: center;
+}
+
+th {
+  background-color: black;
+  color: white;
+  height: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+tbody > tr {
+  background-color: lightyellow;
+}
+
+tbody > tr:hover {
+  background-color: lightgrey;
+}
+
+th:first-child {
+  border-top-left-radius: 8px;
+}
+
+th:last-child {
+  border-top-right-radius: 8px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
 .welcomePhoto {
   width: 100%;
   height: 575px;

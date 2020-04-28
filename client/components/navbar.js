@@ -39,7 +39,7 @@ const Navbar = props => {
             </Link>
           </ul>
           <ul>
-            <a href="#" onClick={handleClick} className="navLink">
+            <a href="/" onClick={handleClick} className="navLink">
               Logout
             </a>
           </ul>

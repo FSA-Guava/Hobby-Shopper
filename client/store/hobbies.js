@@ -4,7 +4,7 @@ import axios from 'axios'
 const GET_HOBBIES = 'GET_HOBBIES'
 
 const ADD_HOBBY = 'ADD_HOBBY'
-
+const DECREASED_SEAT = 'DECREASED_SEAT'
 const REMOVE_HOBBY = 'REMOVE_HOBBY'
 
 // adction creators
@@ -25,6 +25,12 @@ const removedHobby = id => ({
   id
 })
 
+const descreasedSeat = hobby => {
+  return {
+    type: DECREASED_SEAT,
+    hobby
+  }
+}
 //Thunks
 export const fetchHobbies = () => {
   return async dispatch => {
@@ -34,6 +40,20 @@ export const fetchHobbies = () => {
       dispatch(gotHobbies(hobbies))
     } catch (error) {
       console.log('Error retrieving hobbies')
+    }
+  }
+}
+
+export const decreaseOpenSeats = hobbies => {
+  return async dispatch => {
+    try {
+      for (let i = 0; i < hobbies.length; i++) {
+        let hobby = hobbies[i]
+        let {data} = await axios.put(`/api/hobbies/${hobby.id}/decrease`)
+        dispatch(descreasedSeat(data))
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 }
@@ -70,7 +90,13 @@ export default function hobbiesReducer(state = initialState, action) {
     case ADD_HOBBY:
       return [...state, action.hobby]
     case REMOVE_HOBBY:
-      return state.filter(hobby => hobby.id !== action.id)
+      return [...state.filter(hobby => hobby.id !== action.id)]
+    case DECREASED_SEAT:
+      return [
+        ...state.map(
+          hobby => (hobby.id === action.hobby.id ? action.hobby : hobby)
+        )
+      ]
     default:
       return state
   }
