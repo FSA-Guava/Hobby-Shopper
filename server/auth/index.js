@@ -13,9 +13,7 @@ router.post('/login', async (req, res, next) => {
         include: Hobby
       }
     })
-    // const hobbies = req.session.activeOrder.hobbies
-    // await order.addHobbies(hobbies)
-    // await order.reload()
+
     if (!user) {
       console.log('No such user found:', req.body.email)
       res.status(401).send('Wrong username and/or password')
@@ -23,7 +21,24 @@ router.post('/login', async (req, res, next) => {
       console.log('Incorrect password for user:', req.body.email)
       res.status(401).send('Wrong username and/or password')
     } else {
-      req.login(user, err => (err ? next(err) : res.json(user)))
+      let activeOrder = await Order.findOne({
+        where: {
+          userId: user.id,
+          isActive: true
+        },
+        include: [Hobby]
+      })
+      const hobbies = req.session.activeOrder.hobbies
+      await activeOrder.addHobbies(hobbies)
+      await user.reload()
+
+      req.login(user, err => {
+        if (err) {
+          next(err)
+        } else {
+          res.json(user)
+        }
+      })
     }
   } catch (err) {
     next(err)
@@ -42,9 +57,9 @@ router.post('/signup', async (req, res, next) => {
       }
     )
     // waiting for session.order.hobbies to exist
-    // const hobbies = req.session.activeOrder.hobbies
-    // await order.addHobbies(hobbies)
-    // await order.reload()
+    const hobbies = req.session.activeOrder.hobbies
+    await order.addHobbies(hobbies)
+    await order.reload()
     await user.addOrder(order)
     await user.reload()
     req.login(user, err => (err ? next(err) : res.json(user)))
