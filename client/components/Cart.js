@@ -37,9 +37,9 @@ export class Cart extends React.Component {
   checkoutButton(userId, activeOrder, id) {
     this.props.completeOrder(userId, activeOrder)
     this.setState({loading: true})
-    // setTimeout(() => {
-    //   this.props.history.push('/confirmation')
-    // }, 2500)
+    setTimeout(() => {
+      this.props.history.push('/confirmation')
+    }, 2500)
   }
 
   render() {
@@ -47,46 +47,47 @@ export class Cart extends React.Component {
     console.log(cart)
     return this.state.loading ? (
       <div className="orderSuccess">
-        <h2>Check Out Your Purchase!</h2>
-        <button
-          type="submit"
-          onClick={() => this.props.history.push('/confirmation')}
-        >
-          Take me there!
-        </button>
+        <h2>Finishing Your Purchase...</h2>
       </div>
     ) : (
       <div className="cart">
         <h2>Welcome to your cart {user.name}</h2>
-        <h2>Order Hobbies: </h2>
-        <ul>
-          {cart.hobbies
-            ? cart.hobbies.map(hobby => (
-                <li key={hobby.id} className="cartItem">
-                  <span>{hobby.name}:</span>
-                  <div className="cartPrice">
-                    <span>${convertPrice(hobby.price)}</span>
-                    <button
-                      type="submit"
-                      onClick={() => this.removeFromCart(hobby)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </li>
-              ))
-            : null}
-        </ul>
-        <h2> Total Price: ${convertPrice(user.activeOrder.totalPrice)}</h2>
-        <h3 />
-        <button
-          type="button"
-          onClick={() =>
-            this.checkoutButton(user.id, user.activeOrder, user.id)
-          }
-        >
-          Checkout
-        </button>
+        {this.props.cart.hobbies && !this.props.cart.hobbies.length ? (
+          <p>Your Cart Is Empty</p>
+        ) : (
+          <div>
+            <h2>Order Hobbies: </h2>
+            <ul>
+              {cart.hobbies
+                ? cart.hobbies.map(hobby => (
+                    <li key={hobby.id} className="cartItem">
+                      <span>{hobby.name}:</span>
+                      <div className="cartPrice">
+                        <span>${convertPrice(hobby.price)}</span>
+                        <button
+                          type="submit"
+                          onClick={() => this.removeFromCart(hobby)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </li>
+                  ))
+                : null}
+            </ul>
+            <h2> Total Price: ${convertPrice(user.activeOrder.totalPrice)}</h2>
+            <h3 />
+
+            <button
+              type="button"
+              onClick={() =>
+                this.checkoutButton(user.id, user.activeOrder, user.id)
+              }
+            >
+              Checkout
+            </button>
+          </div>
+        )}
       </div>
     )
   }

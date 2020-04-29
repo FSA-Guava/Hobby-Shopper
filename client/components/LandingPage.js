@@ -72,20 +72,14 @@ class LandingPage extends Component {
             passionate about learning new skills. Check out some of our courses
             below and add classes to your cart to get started!
           </p>
-          <img
-            src="https://lh3.googleusercontent.com/proxy/_ZI7vH4uRCFijeD1jfRk8Ir0uTT7AVO2p-JM84b_9-Ex1NjiyvjFairqtHOleP8Z0TJ833AcOUsRc4VpkE22saDNKFaSHaMdyaPKMb5jJbIYKCNOZRZ37sEL"
-            className="separator"
-          />
+          <img src="/separator.png" className="separator" />
           <h2>Join our team of instructors!</h2>
           <p className="welcomeText">
             Why sit on the sidelines, when you could be sharing your passion
             with the world? At Hobby Shopper, we put you in the driver's seat so
             you can create a legacy of excellence.
           </p>
-          <img
-            src="https://lh3.googleusercontent.com/proxy/_ZI7vH4uRCFijeD1jfRk8Ir0uTT7AVO2p-JM84b_9-Ex1NjiyvjFairqtHOleP8Z0TJ833AcOUsRc4VpkE22saDNKFaSHaMdyaPKMb5jJbIYKCNOZRZ37sEL"
-            className="separator"
-          />
+          <img src="/separator.png" className="separator" />
 
           <div className="sampleContainer">
             <h2 className="sampleHeading">Browse some of our courses:</h2>
