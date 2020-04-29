@@ -81,11 +81,20 @@ const createApp = () => {
         )
         await activeOrder.save()
         req.session.activeOrder = activeOrder
-      } else if (!req.user) {
+      } else if (!req.user && req.session.activeOrder.isActive) {
         req.session.activeOrder = await Order.findOne({
           where: {id: req.session.activeOrder.id},
           include: [Hobby]
         })
+      } else if (!req.session.activeOrder.isActive) {
+        const activeOrder = await Order.create(
+          {},
+          {
+            include: [Hobby]
+          }
+        )
+        await activeOrder.save()
+        req.session.activeOrder = activeOrder
       }
 
       next()
