@@ -66,8 +66,9 @@ router.put('/:hobbyId', isInstructorAuth, async (req, res, next) => {
 
 router.put('/:id/decrease', async (req, res, next) => {
   try {
+    console.log('decreased!!!!!!')
     let hobby = await Hobby.findByPk(req.params.id)
-    hobby.openSeats--
+    hobby.openSeats = hobby.openSeats - 1
     await hobby.save()
     res.json(hobby)
   } catch (error) {

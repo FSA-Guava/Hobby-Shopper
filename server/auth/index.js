@@ -27,8 +27,12 @@ router.post('/login', async (req, res, next) => {
         },
         include: [Hobby]
       })
+
+      if (!activeOrder.hobbies) activeOrder.hobbies = []
       const hobbies = req.session.activeOrder.hobbies
       await activeOrder.addHobbies(hobbies)
+      await activeOrder.reload()
+      await activeOrder.getPrice()
       await user.reload()
 
       req.login(user, err => {
@@ -36,19 +40,20 @@ router.post('/login', async (req, res, next) => {
           next(err)
         } else {
           let parsedUser = {
-            id: req.user.id,
-            orders: req.user.orders,
-            name: req.user.name,
-            email: req.user.email,
-            imageUrl: req.user.imageUrl
+            id: user.id,
+            orders: user.orders,
+            name: user.name,
+            email: user.email,
+            imageUrl: user.imageUrl
           }
-          if (req.user.isAdmin) {
-            parsedUser.isAdmin = req.user.isAdmin
+          if (user.isAdmin) {
+            parsedUser.isAdmin = user.isAdmin
           }
-          if (req.user.isInstructor) {
-            parsedUser.isInstructor = req.user.isInstructor
+          if (user.isInstructor) {
+            parsedUser.isInstructor = user.isInstructor
           }
-          res.json(parsedUser)
+
+          res.send(parsedUser)
         }
       })
     }
@@ -68,39 +73,44 @@ router.post('/signup', async (req, res, next) => {
         isInstructor: req.body.isInstructor
       },
       {
-        include: [Order]
+        include: {
+          model: Order,
+          include: Hobby
+        }
       }
     )
-    const order = await Order.create(
-      {},
-      {
-        include: [Hobby]
-      }
-    )
-    // waiting for session.order.hobbies to exist
-    const hobbies = req.session.activeOrder.hobbies
-    await order.addHobbies(hobbies)
+
+    const order = await Order.findOne({
+      where: {
+        id: req.session.activeOrder.id
+      },
+      include: [Hobby]
+    })
+
+    await order.update({userId: user.id})
     await order.reload()
+    await order.getPrice()
     await user.addOrder(order)
     await user.reload()
+
     req.login(user, err => {
       if (err) {
         next(err)
       } else {
         let parsedUser = {
-          id: req.user.id,
-          orders: req.user.orders,
-          name: req.user.name,
-          email: req.user.email,
-          imageUrl: req.user.imageUrl
+          id: user.id,
+          orders: user.orders,
+          name: user.name,
+          email: user.email,
+          imageUrl: user.imageUrl
         }
-        if (req.user.isAdmin) {
-          parsedUser.isAdmin = req.user.isAdmin
+        if (user.isAdmin) {
+          parsedUser.isAdmin = user.isAdmin
         }
-        if (req.user.isInstructor) {
-          parsedUser.isInstructor = req.user.isInstructor
+        if (user.isInstructor) {
+          parsedUser.isInstructor = user.isInstructor
         }
-        res.json(parsedUser)
+        res.send(parsedUser)
       }
     })
   } catch (err) {

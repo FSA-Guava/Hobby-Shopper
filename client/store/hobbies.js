@@ -48,6 +48,7 @@ export const decreaseOpenSeats = hobbies => {
   return async dispatch => {
     try {
       for (let i = 0; i < hobbies.length; i++) {
+        console.log('oneee seaat')
         let hobby = hobbies[i]
         let {data} = await axios.put(`/api/hobbies/${hobby.id}/decrease`)
         dispatch(descreasedSeat(data))

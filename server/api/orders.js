@@ -223,13 +223,15 @@ router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
 // security layer: admin authorization, authenticated user (AND GUEST??)
 router.put('/:userId/checkout', async (req, res, next) => {
   const currentUser = req.user
+  console.log(req.params)
+  console.log(req.user)
   if (
     req.params.userId !== 'guest' &&
-    currentUser.id !== req.params.userId &&
+    currentUser.id !== parseInt(req.params.userId, 10) &&
     !currentUser.isAdmin
   ) {
     const error = new Error('YOU SHALL NOT PASS!')
-    error.status(401)
+    error.status = 401
     next(error)
   }
 

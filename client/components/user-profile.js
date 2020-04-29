@@ -34,19 +34,27 @@ export const UserHome = props => {
             <th>Items Purchased</th>
           </thead>
           <tbody>
-            {props.user.orders.map(order => (
-              <tr key={order.id}>
-                <td>{order.updatedAt.match(/.+?(?=[T])/g)[0]}</td>
-                <td>{order.purchaseCode}</td>
-                <td>
-                  <ol>
-                    {order.hobbies.map(hobby => (
-                      <li key={hobby.id}>{hobby.name}</li>
-                    ))}
-                  </ol>
-                </td>
+            {!props.user.orders.length ? (
+              <tr>
+                <td />
+                <td />
+                <td />
               </tr>
-            ))}
+            ) : (
+              props.user.orders.map(order => (
+                <tr key={order.id}>
+                  <td>{order.updatedAt.match(/.+?(?=[T])/g)[0]}</td>
+                  <td>{order.purchaseCode}</td>
+                  <td>
+                    <ol>
+                      {order.hobbies.map(hobby => (
+                        <li key={hobby.id}>{hobby.name}</li>
+                      ))}
+                    </ol>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

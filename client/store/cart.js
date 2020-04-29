@@ -32,31 +32,6 @@ let initialState = {
 // also add actions and case to user reducer
 
 //checkout thunk creator
-export const completeOrder = (userId, activeOrder) => {
-  return async function(dispatch) {
-    try {
-      if (userId) {
-        const {data} = await axios.put(
-          `/api/orders/${userId}/checkout`,
-          activeOrder
-        )
-        dispatch(completedOrder(data))
-        dispatch(decreaseOpenSeats(activeOrder.hobbies))
-      } else {
-        const {data} = await axios.put(
-          `/api/orders/guest/checkout`,
-          activeOrder
-        )
-        dispatch(completedOrder(data))
-        dispatch(decreaseOpenSeats(activeOrder.hobbies))
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
-}
-
-//create new blank order thunk creator
 export const createOrder = (id = null) => {
   return async function(dispatch) {
     try {
@@ -68,6 +43,35 @@ export const createOrder = (id = null) => {
     }
   }
 }
+
+export const completeOrder = (userId, activeOrder) => {
+  return async function(dispatch) {
+    try {
+      console.log(userId, 'completeORder')
+      if (userId) {
+        const {data} = await axios.put(
+          `/api/orders/${userId}/checkout`,
+          activeOrder
+        )
+        dispatch(completedOrder(data))
+        dispatch(decreaseOpenSeats(activeOrder.hobbies))
+        dispatch(createOrder(userId))
+      } else {
+        const {data} = await axios.put(
+          `/api/orders/guest/checkout`,
+          activeOrder
+        )
+        dispatch(completedOrder(data))
+        dispatch(decreaseOpenSeats(activeOrder.hobbies))
+        dispatch(createOrder(userId))
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+//create new blank order thunk creator
 
 export const addItem = (user, hobby) => {
   return async function(dispatch) {
@@ -83,9 +87,6 @@ export const addItem = (user, hobby) => {
           `/api/orders/guest/add/${hobby.id}`,
           user.activeOrder
         )
-        if (res) {
-          await axios.put(`/api/hobbies/${hobby.id}/decrease`)
-        }
       }
       dispatch(addedItem(res.data))
     } catch (error) {

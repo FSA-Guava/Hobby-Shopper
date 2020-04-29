@@ -47,7 +47,6 @@ export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
     let user
-    console.log(res.data)
     if (res.data.orders) {
       //checking if the user exists, if it exists we set its active branch as a property and we take it out of the orders array
       user = setActiveOrder(res.data)
@@ -69,7 +68,7 @@ export const auth = (formBody, method) => async dispatch => {
   } catch (authError) {
     return dispatch(getUser({error: authError}))
   }
-
+  console.log(res, 'justsigned')
   try {
     dispatch(getUser(setActiveOrder(res.data)))
     history.push('/profile')

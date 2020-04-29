@@ -36,24 +36,24 @@ export class Cart extends React.Component {
 
   checkoutButton(userId, activeOrder, id) {
     this.props.completeOrder(userId, activeOrder)
-    this.props.createOrder(id)
     this.setState({loading: true})
-    setTimeout(() => {
-      this.props.history.push('/confirmation')
-    }, 2500)
+    // setTimeout(() => {
+    //   this.props.history.push('/confirmation')
+    // }, 2500)
   }
 
   render() {
     const {user, cart} = this.props
+    console.log(cart)
     return this.state.loading ? (
       <div className="orderSuccess">
-        <h2>Confirming your order...</h2>
-        {/* <button
-        type="submit"
-        onClick={() => this.props.history.push('/confirmation')}
+        <h2>Check Out Your Purchase!</h2>
+        <button
+          type="submit"
+          onClick={() => this.props.history.push('/confirmation')}
         >
-        Take me there!
-      </button> */}
+          Take me there!
+        </button>
       </div>
     ) : (
       <div className="cart">
