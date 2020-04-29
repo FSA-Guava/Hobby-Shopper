@@ -135,7 +135,7 @@ router.get('/:userId/all', authUser, async (req, res, next) => {
 })
 
 // security layer: admin authorization, authenticated user (when adding to their own cart)
-router.put('/:userId/add/:hobbyId', authUser, async (req, res, next) => {
+router.put('/:userId/add/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
     console.log('req.params', req.body)
@@ -147,7 +147,6 @@ router.put('/:userId/add/:hobbyId', authUser, async (req, res, next) => {
       },
       include: [Hobby]
     })
-    console.log('foundOrder', foundOrder)
     // finding all active orders based on userId
     let userOrders
     let containsHobby
@@ -188,7 +187,7 @@ router.put('/:userId/add/:hobbyId', authUser, async (req, res, next) => {
 })
 
 // security layer: admin authorization, authenticated user (when removing items from their own cart)
-router.put('/:userId/remove/:hobbyId', authUser, async (req, res, next) => {
+router.put('/:userId/remove/:hobbyId', async (req, res, next) => {
   try {
     // finding the active order based on userId
     const foundOrder = await Order.findOne({
@@ -222,7 +221,7 @@ router.put('/:userId/remove/:hobbyId', authUser, async (req, res, next) => {
 })
 
 // security layer: admin authorization, authenticated user (AND GUEST??)
-router.put('/:userId/checkout', authUser, async (req, res, next) => {
+router.put('/:userId/checkout', async (req, res, next) => {
   const currentUser = req.user
   if (
     req.params.userId !== 'guest' &&

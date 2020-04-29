@@ -12,8 +12,7 @@ const User = db.define('user', {
   },
   imageUrl: {
     type: Sequelize.TEXT,
-    defaultValue:
-      'https://getdrawings.com/free-icon/generic-profile-icon-73.png'
+    defaultValue: '/profiledefaultpic.png'
   },
   email: {
     type: Sequelize.STRING,

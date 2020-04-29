@@ -7,8 +7,8 @@ import axios from 'axios'
 const selectArr = new Array(30).fill(1)
 
 const convertPrice = price => {
-  let comma = price > 0 ? ',' : ''
-  comma = price < 100 ? '0,' : comma
+  let comma = price > 0 ? '.' : ''
+  comma = price < 100 ? '0.' : comma
   return (
     String(price)
       .slice(0, -2)
@@ -84,6 +84,8 @@ export class HobbyForm extends Component {
     const newState = {...this.state}
     newState.model[event.target.name] = event.target.value
     this.setState(newState)
+    event.target.style.height = '1px'
+    event.target.style.height = event.target.scrollHeight + 5 + 'px'
   }
 
   handleSubmit(event) {
@@ -98,6 +100,8 @@ export class HobbyForm extends Component {
       this.props.newHobby(this.state.model)
       this.setState({wasCreated: true})
     }
+    event.target.style.height = '1px'
+    event.target.style.height = event.target.scrollHeight + 5 + 'px'
   }
 
   handleDelete() {

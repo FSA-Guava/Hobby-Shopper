@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom'
 import {removeItem, completeOrder, createOrder} from '../store/cart'
 
 const convertPrice = price => {
-  let comma = price > 0 ? ',' : ''
-  comma = price < 100 ? '0,' : comma
+  let comma = price > 0 ? '.' : ''
+  comma = price < 100 ? '0.' : comma
   return (
     String(price)
       .slice(0, -2)
@@ -21,12 +21,14 @@ export class Cart extends React.Component {
   constructor() {
     super()
     this.state = {
-      wasSubmitted: false
+      loading: false
     }
     this.removeFromCart = this.removeFromCart.bind(this)
     this.checkoutButton = this.checkoutButton.bind(this)
   }
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({loading: false})
+  }
 
   removeFromCart(hobby) {
     this.props.removeItem(this.props.user, hobby)
@@ -35,20 +37,26 @@ export class Cart extends React.Component {
   checkoutButton(userId, activeOrder, id) {
     this.props.completeOrder(userId, activeOrder)
     this.props.createOrder(id)
-    this.setState({wasSubmitted: true})
+    this.setState({loading: true})
+    setTimeout(() => {
+      this.props.history.push('/confirmation')
+    }, 2500)
   }
 
   render() {
     const {user, cart} = this.props
-    return this.state.wasSubmitted ? (
-      <button
+    return this.state.loading ? (
+      <div className="orderSuccess">
+        <h2>Confirming your order...</h2>
+        {/* <button
         type="submit"
         onClick={() => this.props.history.push('/confirmation')}
-      >
-        View Order Confirmation
-      </button>
+        >
+        Take me there!
+      </button> */}
+      </div>
     ) : (
-      <div>
+      <div className="cart">
         <h2>Welcome to your cart {user.name}</h2>
         <h2>Order Hobbies: </h2>
         <ul>

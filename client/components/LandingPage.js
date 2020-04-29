@@ -47,7 +47,6 @@ class LandingPage extends Component {
 
   render() {
     const sampleHobbies = this.randomDisplay()
-    console.log('IS THIS SAMPLE HOBBIES>>>>', sampleHobbies)
     return (
       <div className="landingPage">
         <div className="welcomePhotoContainer">
@@ -59,7 +58,10 @@ class LandingPage extends Component {
             <h2>Welcome to Hobby Shopper</h2>
           </div>
           <div className="bottom-right">
-            <h4>"Hobby Shopper made my dreams come true!"</h4>
+            <h4>
+              "Hobby Shopper made my dreams come true!" - Jessica B., FSA 2003
+              Instructor
+            </h4>
           </div>
         </div>
         <div className="landingPageContent">
@@ -100,7 +102,7 @@ class LandingPage extends Component {
                             src={sample.imageUrl}
                             className="sampleHobbyPhoto"
                           />
-                          <h6>Course Name: {sample.name}</h6>
+                          <h6>{sample.name}</h6>
                           <h6>Price: ${sample.price}</h6>
                           <h6>Seats Available: {sample.openSeats}</h6>
                         </Link>

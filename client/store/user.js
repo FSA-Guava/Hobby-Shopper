@@ -72,7 +72,7 @@ export const auth = (formBody, method) => async dispatch => {
 
   try {
     dispatch(getUser(setActiveOrder(res.data)))
-    history.push('/home')
+    history.push('/profile')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }

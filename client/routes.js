@@ -35,7 +35,7 @@ class Routes extends Component {
       <div className="routesContainer">
         <Route path="/" component={Navbar} />
         <Switch>
-          <Route path="/home" component={LandingPage} />
+          <Route exact path="/" component={LandingPage} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/confirmation" component={Confirmation} />
