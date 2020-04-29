@@ -4,10 +4,10 @@ body {
   /* font-family: Comic Sans MS; */
   /* font-family: Chalkduster; // ONLY HOBBY SHOPPER LOGO STUFF! */
   /* font-family: Stencil Std; */
-  /* font-family: Marker Felt; */
+
   /* background-size: 300vw 100vw; */
   /* background-repeat: repeat-x; */
-
+  font-family: 'Roboto', sans-serif;
   background: url(http://api.thumbr.it/whitenoise-361x370.png?background=ebeff0ff&noise=d4cdd4&density=19&opacity=21);
   height: 100vh;
 }
@@ -106,6 +106,7 @@ form div {
 .navBar-Main {
   box-shadow: 0px 10px 12px 0px rgb(0, 0, 0);
   display: flex;
+  font-family: Alfa Slab One;
   /* background-color: rgb(60, 57, 57); */
   background-color: #453f78;
   color: white;
@@ -301,7 +302,12 @@ button:hover {
   width: 100%;
 }
 
+.sampleContainer > h2 {
+  margin-bottom: 25px;
+}
 .sampleHobbies {
+  padding-top: 25px;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -342,6 +348,7 @@ button:hover {
 }
 
 .sampleHobbyPhoto {
+  border-radius: 10px;
   max-width: 200px;
 }
 
@@ -384,18 +391,61 @@ a {
   flex-direction: column;
 }
 
+.profilePage {
+  margin: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profilePhoto > img {
+  border-radius: 8px;
+  flex: 1 1 50%;
+}
+
+.profileContent {
+  font-size: 22px;
+  padding: 80px;
+  padding-top: 50px;
+  flex: 1 1 50%;
+}
+
+.singleHobbyPage {
+  margin: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.singleHobbyPhoto > img {
+  width: 650px;
+  height: 350px;
+  border-radius: 8px;
+  flex: 1 1 50%;
+}
+
+.singleHobbyContent {
+  font-size: 22px;
+  padding: 80px;
+  padding-top: 50px;
+  flex: 1 1 50%;
+}
+
 .oneHobby {
   /* border-style: solid; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-  background-color: rgb(169, 215, 218);
+  /* background-color: rgb(169, 215, 218); */
+  background-color: cadetblue;
+  color: white;
   border-radius: 10px;
   align-items: center;
 }
 
 .oneHobby:hover {
+  /* opacity: 0.8; */
   background-color: rgb(116, 143, 145);
   box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
     rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
@@ -409,6 +459,8 @@ a {
 } */
 
 .oneHobbyImage {
+  width: 450px;
+  height: 250px;
   border-radius: 10px;
 }
 
@@ -446,18 +498,18 @@ a {
   height: 40px;
   bottom: 0;
   justify-self: end; */
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  height: 40px;
   padding: 1rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.profilePage {
-  margin-top: 40px;
+.footer > h5 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 }
-
 .routesContainer {
   display: flex;
   flex-direction: column;

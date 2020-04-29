@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom'
 import {removeItem, completeOrder, createOrder} from '../store/cart'
 
 const convertPrice = price => {
-  let comma = price > 0 ? ',' : ''
-  comma = price < 100 ? '0,' : comma
+  let comma = price > 0 ? '.' : ''
+  comma = price < 100 ? '0.' : comma
   return (
     String(price)
       .slice(0, -2)

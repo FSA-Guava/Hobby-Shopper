@@ -3045,14 +3045,35 @@ const hobbies = [
   }
 ]
 
+const subjects = [
+  {subject: 'Cooking', imageUrl: '/subjectsLogos/cooking.png'},
+  {subject: 'Crafts', imageUrl: '/subjectsLogos/crafts.png'},
+  {subject: 'Garden', imageUrl: '/subjectsLogos/garden.png'},
+  {subject: 'Technology', imageUrl: '/subjectsLogos/laptop.png'},
+  {subject: 'Mind and Body', imageUrl: '/subjectsLogos/mindful.png'},
+  {subject: 'Outdoors', imageUrl: '/subjectsLogos/outdoors.png'},
+  {subject: 'Academic', imageUrl: '/subjectsLogos/scholar.png'},
+  {subject: 'Science', imageUrl: '/subjectsLogos/science.png'},
+  {subject: 'Home Improvement', imageUrl: '/subjectsLogos/tools.png'}
+]
+
 const db = require('../server/db')
 const {User, Hobby, Order} = require('../server/db/models')
 console.log('db synced!')
-
+function getRandomInt(min, max) {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min)) + min //The maximum is exclusive and the minimum is inclusive}
+}
 async function seed() {
   await db.sync({force: true})
 
   let createdHobbies = await Hobby.bulkCreate(hobbies, {returning: true})
+
+  for (let i = 0; i < createdHobbies.length; i++) {
+    let num = getRandomInt(0, 9)
+    await createdHobbies[i].update(subjects[num])
+  }
 
   for (let i = 0; i < userArray.length; i++) {
     const newUser = await User.create(userArray[i])

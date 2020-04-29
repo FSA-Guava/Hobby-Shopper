@@ -100,7 +100,7 @@ class AllHobbies extends React.Component {
                       </h4>
                     </Link>
 
-                    {this.checkForBought(hobby) ? (
+                    {this.props.cart && this.checkForBought(hobby) ? (
                       <p>You Already Own This Product!</p>
                     ) : this.checkCart(hobby) ? (
                       <button
