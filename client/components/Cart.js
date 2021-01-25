@@ -1,45 +1,124 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {removeItem, completeOrder, createOrder} from '../store/cart'
+
+const convertPrice = price => {
+  let comma = price > 0 ? '.' : ''
+  comma = price < 100 ? '0.' : comma
+  return (
+    String(price)
+      .slice(0, -2)
+      .replace('.', '') +
+    comma +
+    String(price)
+      .slice(-2)
+      .replace('.', '')
+  )
+}
 
 export class Cart extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      loading: false
+    }
+    this.removeFromCart = this.removeFromCart.bind(this)
+    this.checkoutButton = this.checkoutButton.bind(this)
+  }
   componentDidMount() {
-    console.log('this.props>>>>', this.props)
+    this.setState({loading: false})
+  }
+
+  removeFromCart(hobby) {
+    this.props.removeItem(this.props.user, hobby)
+  }
+
+  checkoutButton(userId, activeOrder, id) {
+    this.props.completeOrder(userId, activeOrder)
+    this.setState({loading: true})
+    setTimeout(() => {
+      this.props.history.push('/confirmation')
+    }, 2500)
   }
 
   render() {
-    return (
-      <div>
-        <h2>Welcome, name</h2>
-        <h3 />
-        <button type="button" onClick={() => {}}>
-          PURCHASE
-        </button>
+    const {user, cart} = this.props
+    console.log(cart)
+    return this.state.loading ? (
+      <div className="orderSuccess">
+        <h2>Finishing Your Purchase...</h2>
+      </div>
+    ) : (
+      <div className="cart">
+        <h2>Welcome to your cart {user.name}</h2>
+        {this.props.cart.hobbies && !this.props.cart.hobbies.length ? (
+          <p>Your Cart Is Empty</p>
+        ) : (
+          <div>
+            <h2>Order Hobbies: </h2>
+            <ul>
+              {cart.hobbies
+                ? cart.hobbies.map(hobby => (
+                    <li key={hobby.id} className="cartItem">
+                      <span>{hobby.name}:</span>
+                      <div className="cartPrice">
+                        <span>${convertPrice(hobby.price)}</span>
+                        <button
+                          type="submit"
+                          onClick={() => this.removeFromCart(hobby)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </li>
+                  ))
+                : null}
+            </ul>
+            <h2> Total Price: ${convertPrice(user.activeOrder.totalPrice)}</h2>
+            <h3 />
+
+            <button
+              type="button"
+              onClick={() =>
+                this.checkoutButton(user.id, user.activeOrder, user.id)
+              }
+            >
+              Checkout
+            </button>
+          </div>
+        )}
       </div>
     )
   }
 }
-
-const mapToState = state => {
-  return {
-    user: state.user
-  }
-}
-
-// const mapToDispatch = dispatch => {
-
-// }
-
-export default connect(mapToState)(Cart)
-
 /*
         - Render User Name on top
         - Render all current hobbies in active order
-        - Delete an item with a button
         - Render price next to hobby
         - Render total price at bottom of cart
         - Include button to checkout and complete order
+        
+        - Delete an item with a button
 
         - Guest Cart:
         - Merge guest cart into user cart when logging in?
      */
+
+const mapToState = state => {
+  return {
+    user: state.user,
+    cart: state.cart
+  }
+}
+
+const mapToDispatch = dispatch => {
+  return {
+    removeItem: (user, hobby) => dispatch(removeItem(user, hobby)),
+    completeOrder: (userId, activeOrder) =>
+      dispatch(completeOrder(userId, activeOrder)),
+    createOrder: id => dispatch(createOrder(id))
+  }
+}
+
+export default connect(mapToState, mapToDispatch)(Cart)

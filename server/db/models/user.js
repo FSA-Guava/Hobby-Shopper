@@ -12,8 +12,7 @@ const User = db.define('user', {
   },
   imageUrl: {
     type: Sequelize.TEXT,
-    defaultValue:
-      'https://getdrawings.com/free-icon/generic-profile-icon-73.png'
+    defaultValue: '/profiledefaultpic.png'
   },
   email: {
     type: Sequelize.STRING,
@@ -91,7 +90,12 @@ const setSaltAndPassword = user => {
     user.password = User.encryptPassword(user.password(), user.salt())
   }
 }
-
+const setForDefault = user => {
+  if (!user.imageUrl.length) {
+    user.imageUrl = undefined
+  }
+}
+User.beforeValidate(setForDefault)
 User.beforeCreate(setSaltAndPassword)
 User.beforeUpdate(setSaltAndPassword)
 User.beforeBulkCreate(users => {
