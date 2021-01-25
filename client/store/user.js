@@ -21,12 +21,17 @@ const setActiveOrder = user => {
  */
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
+const ADD_ITEM = 'ADD_ITEM'
+const REMOVE_ITEM = 'REMOVE_ITEM'
+const COMPLETE_ORDER = 'COMPLETE_ORDER'
+const CREATE_ORDER = 'CREATE_ORDER'
 
 /**
  * INITIAL STATE
  */
 const defaultUser = {
-  activeOrder: {}
+  activeOrder: {},
+  orders: []
 }
 
 /**
@@ -42,12 +47,12 @@ export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
     let user
-    console.log(res.data)
     if (res.data.orders) {
       //checking if the user exists, if it exists we set its active branch as a property and we take it out of the orders array
       user = setActiveOrder(res.data)
     } else {
       user = res.data
+      user.orders = []
     }
 
     dispatch(getUser(user || defaultUser))
@@ -63,10 +68,10 @@ export const auth = (formBody, method) => async dispatch => {
   } catch (authError) {
     return dispatch(getUser({error: authError}))
   }
-
+  console.log(res, 'justsigned')
   try {
     dispatch(getUser(setActiveOrder(res.data)))
-    history.push('/home')
+    history.push('/profile')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
@@ -91,6 +96,14 @@ export default function(state = defaultUser, action) {
       return action.user
     case REMOVE_USER:
       return defaultUser
+    case ADD_ITEM:
+      return {...state, activeOrder: action.order}
+    case REMOVE_ITEM:
+      return {...state, activeOrder: action.order}
+    case COMPLETE_ORDER:
+      return {...state, orders: [...state.orders, action.order]}
+    case CREATE_ORDER:
+      return {...state, activeOrder: action.order}
     default:
       return state
   }
